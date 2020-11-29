@@ -6,7 +6,7 @@ body {
 .header-nav {
     width: 95%;
     height: 60px;
-    background-color: #fff;
+    background-color: #282c34;
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -18,6 +18,8 @@ body {
     height: 60px;
     width: auto;
     margin-left: 10px;
+    box-shadow: 0 -1px 10px -4px rgba(0, 0, 0, 0.75);
+    border-radius: 3px;
 }
 
 .header-nav > ul {
@@ -92,7 +94,7 @@ body {
     border-radius: 3px;
     color: #fff;
     font-size: 18px;
-   box-shadow: 0 -1px 10px -4px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 -1px 10px -4px rgba(0, 0, 0, 0.75);
     text-align: center;
 }
 
@@ -114,7 +116,8 @@ div.header-row > span {
     clear: both;
     display: block;
 }
-.row{
+
+.row {
     border: 5px solid #11a5c0;
     border-radius: 5px;
 }
@@ -122,7 +125,7 @@ div.header-row > span {
 [class*='col-'] {
     float: left;
     min-height: 1px;
-    padding: .8rem;
+    padding: 1.2rem;
 }
 
 .col-1 {
@@ -134,7 +137,7 @@ div.header-row > span {
 }
 
 .col-3 {
-    width: 48.5%;
+    width: 48%;
 }
 
 
@@ -145,7 +148,7 @@ div.header-row > span {
 @media (max-width: 1024px) {
 
     .col-1 {
-        width: 31.8%;;
+        width: 31.8%;
     }
 
 }
@@ -233,8 +236,30 @@ projektspezifischeMetivationText {
     border: 5px solid #11a5c0;
 }
 
-@media (max-width: 1794px) {
+@media (max-width: 1834px) {
     .col-3 > img {
-        margin-left: 15%;
+        height: 260px;
+        width: 260px;
+        margin-left: 10%;
+        margin-top: 15px;
+        border: 5px solid #11a5c0;
     }
+}
+
+@media (max-width: 1805px) {
+    .col-3 > img {
+        height: 200px;
+        width: 200px;
+        margin-left: 2%;
+        margin-top: 15px;
+        border: 5px solid #11a5c0;
+    }
+}
+
+.col-3 > img.biggerPicture {
+    width: 284px;
+    height: auto;
+    margin-left: 15%;
+    margin-top: 15px;
+    border: 5px solid #11a5c0;
 }
