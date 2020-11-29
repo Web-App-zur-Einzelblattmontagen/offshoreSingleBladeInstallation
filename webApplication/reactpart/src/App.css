@@ -2,6 +2,10 @@ body {
     background-color: #282c34;
 }
 
+p{
+    margin-left: 5px;
+    margin-right: 5px;
+}
 
 .header-nav {
     width: 95%;
@@ -159,11 +163,11 @@ div.header-row > span {
     }
 
     .col-2 {
-        width: 100%;
+        width: 98%;
     }
 
     .col-3 {
-        width: 100%;
+        width: 98%;
     }
 
     .header-nav > ul > li {
@@ -183,15 +187,15 @@ div.header-row > span {
 
 @media (max-width: 480px) {
     .col-1 {
-        width: 100%;
+        width: 98%;
     }
 
     .col-2 {
-        width: 100%;
+        width: 98%;
     }
 
     .col-3 {
-        width: 100%;
+        width: 98%;
     }
 
     .header-nav > ul > li {
@@ -216,7 +220,7 @@ div.header-row > span {
     font-weight: bold;
 }
 
-projektspezifischeMetivationText {
+.projektspezifischeMetivationText {
     border: 2px solid #11a5c0;
     border-radius: 3px;
 
@@ -231,35 +235,60 @@ projektspezifischeMetivationText {
 .col-3 > img {
     height: 284px;
     width: 284px;
-    margin-left: 15%;
-    margin-top: 15px;
+    margin-left: 50px;
+    margin-top: 30px;
     border: 5px solid #11a5c0;
 }
 
-@media (max-width: 1834px) {
+@media (max-width: 1862px) {
     .col-3 > img {
-        height: 260px;
-        width: 260px;
-        margin-left: 10%;
-        margin-top: 15px;
+        height: 250px;
+        width: 250px;
+        margin-left: 50px;
+        margin-top: 50px;
         border: 5px solid #11a5c0;
     }
+    [class*='col-'] {
+    float: left;
+    min-height: 1px;
+    padding: .7rem;
 }
-
-@media (max-width: 1805px) {
+}
+@media (max-width: 1370px) {
     .col-3 > img {
         height: 200px;
         width: 200px;
-        margin-left: 2%;
-        margin-top: 15px;
+        margin-left: 50px;
+        margin-top: 70px;
         border: 5px solid #11a5c0;
     }
+    [class*='col-'] {
+    float: left;
+    min-height: 1px;
+    padding: .7rem;
 }
+}
+@media (max-width: 1188px) {
+    .col-3 > img {
+        height: 200px;
+        width: 200px;
+        margin-left: 50px;
+        margin-top: 35px;
+        border: 5px solid #11a5c0;
+        display: block;
+    }
+    [class*='col-'] {
+    float: left;
+    min-height: 1px;
+    padding: .6rem;
+}
+}
+
 
 .col-3 > img.biggerPicture {
     width: 284px;
     height: 409px;
-    margin-left: 15%;
+    margin-left: 50px;
     margin-top: 12px;
     border: 5px solid #11a5c0;
 }
