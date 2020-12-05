@@ -1,2 +1,0 @@
-# offshoreSingleBladeAssembly
-Test
