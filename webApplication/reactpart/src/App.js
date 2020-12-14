@@ -1,45 +1,47 @@
-import React, { useRef, useEffect } from 'react';
-import { useLocation, Switch } from 'react-router-dom';
+import React from 'react';
+import { withRouter, Switch } from 'react-router-dom';
 import AppRoute from './utils/AppRoute';
 import ScrollReveal from './utils/ScrollReveal';
-import ReactGA from 'react-ga';
 
 // Layouts
 import LayoutDefault from './layouts/LayoutDefault';
+import LayoutAlternative from './layouts/LayoutAlternative';
+import LayoutSignin from './layouts/LayoutSignin';
 
 // Views 
 import Home from './views/Home';
+import Secondary from './views/Secondary';
+import Login from './views/Login';
+import Signup from './views/Signup';
 
-// Initialize Google Analytics
-ReactGA.initialize(process.env.REACT_APP_GA_CODE);
+class App extends React.Component {
 
-const trackPage = page => {
-  ReactGA.set({ page });
-  ReactGA.pageview(page);
-};
-
-const App = () => {
-
-  const childRef = useRef();
-  let location = useLocation();
-
-  useEffect(() => {
-    const page = location.pathname;
+  componentDidMount() {
     document.body.classList.add('is-loaded')
-    childRef.current.init();
-    trackPage(page);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location]);
+    this.refs.scrollReveal.init();
+  }
 
-  return (
-    <ScrollReveal
-      ref={childRef}
-      children={() => (
-        <Switch>
-          <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
-        </Switch>
-      )} />
-  );
+  // Route change
+  componentDidUpdate(prevProps) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      this.refs.scrollReveal.init();
+    }
+  }
+
+  render() {
+    return (
+      <ScrollReveal
+        ref="scrollReveal"
+        children={() => (
+          <Switch>
+            <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
+            <AppRoute exact path="/secondary" component={Secondary} layout={LayoutAlternative} />
+            <AppRoute exact path="/login" component={Login} layout={LayoutSignin} />
+            <AppRoute exact path="/signup" component={Signup} layout={LayoutSignin} />
+          </Switch>
+        )} />
+    );
+  }
 }
 
-export default App;
+export default withRouter(props => <App {...props} />);

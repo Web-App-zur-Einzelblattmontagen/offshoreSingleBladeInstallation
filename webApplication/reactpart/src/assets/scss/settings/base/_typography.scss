@@ -1,12 +1,12 @@
 // Typography
 
 $font--provider:    'Google Fonts';
-$font--import:      'Inter:400,500,600,700,800';
+$font--import:      'IBM+Plex+Sans:500,600|Heebo:400,500,700';
 
 // The font set
 $font--family: (
-	heading: 	null,
-	base:		'"Inter", sans-serif',
+	heading: 	'"IBM Plex Sans", serif',
+	base:		'"Heebo", sans-serif',
 	code: 		'Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace',
 	pre: 		'"Courier 10 Pitch", Courier, monospace'
 );
@@ -14,9 +14,9 @@ $font--family: (
 // The typographic scale
 $font--scale: (
 	// key 		// font-size, line-height, kerning
-	alpha:   	( 52px, 62px, -0.3px ),
-	beta:    	( 44px, 54px, -0.3px ),
-	gamma:   	( 32px, 42px, -0.3px ),
+	alpha:   	( 44px, 54px, null ),
+	beta:    	( 36px, 46px, null ),
+	gamma:   	( 32px, 42px, null ),
 	delta:   	( 24px, 34px, -0.1px ),
 	epsilon: 	( 20px, 30px, -0.1px ),
 	zeta:    	( 18px, 28px, -0.1px ),
@@ -58,7 +58,7 @@ $font--size: (
 
 // Base elements: font weight
 $font--weight: (
-	heading:	800,
+	heading:	600,
 	base: 		400,
 	strong:		700,
 	bquote: 	600,

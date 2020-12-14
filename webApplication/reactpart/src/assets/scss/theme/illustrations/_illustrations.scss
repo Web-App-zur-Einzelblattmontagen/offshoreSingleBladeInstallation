@@ -16,10 +16,10 @@
 
 // Hero illustration
 .illustration-section-01::after {
-	@include illustration('illustration-section-01.svg', 100%, 286px, top);
+	@include illustration('illustration-section-01.svg', 100%, 362px, top);
 }
 
-// Features illustration 02
-.illustration-section-02::after {
-	@include illustration('illustration-section-02.svg', 100%, 253px, null, null, 30px);
+// Behind hero figure
+.illustration-element-01::after {
+	@include illustration('illustration-element-01.svg', 150%, 150%);
 }

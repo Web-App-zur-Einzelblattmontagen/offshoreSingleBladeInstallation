@@ -9,46 +9,39 @@ const propTypes = {
   onLinkClick: PropTypes.func
 }
 
-const SmoothScroll = ({
-  className,
-  children,
-  to,
-  duration,
-  onLinkClick,
-  ...props
-}) => {
+class SmoothScroll extends React.Component {
 
-  const easeInOutQuad = (t) => {
+  easeInOutQuad = (t) => {
     return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t
   };
 
-  const scrollToEl = (startTime, currentTime, duration, scrollEndElemTop, startScrollOffset) => {
+  scrollToEl = (startTime, currentTime, duration, scrollEndElemTop, startScrollOffset) => {
     const runtime = currentTime - startTime;
     let progress = runtime / duration;
 
     progress = Math.min(progress, 1);
 
-    const ease = easeInOutQuad(progress);
+    const ease = this.easeInOutQuad(progress);
 
     window.scroll(0, startScrollOffset + (scrollEndElemTop * ease));
     if (runtime < duration) {
       window.requestAnimationFrame((timestamp) => {
         const currentTime = timestamp || new Date().getTime();
-        scrollToEl(startTime, currentTime, duration, scrollEndElemTop, startScrollOffset);
+        this.scrollToEl(startTime, currentTime, duration, scrollEndElemTop, startScrollOffset);
       });
     }
   };
 
-  const smoothScroll = (e) => {
+  smoothScroll = (e) => {
     e.preventDefault();
 
-    const targetId = to;
+    const targetId = this.props.to;
     const target = document.getElementById(targetId);
-    const timing = duration || 1000;
+    const duration = this.props.duration || 1000;
 
     if (!target) return;
 
-    onLinkClick && onLinkClick();
+    this.props.onLinkClick && this.props.onLinkClick();
 
     window.requestAnimationFrame((timestamp) => {
       const stamp = timestamp || new Date().getTime();
@@ -57,23 +50,34 @@ const SmoothScroll = ({
       const startScrollOffset = window.pageYOffset;
       const scrollEndElemTop = target.getBoundingClientRect().top;
 
-      scrollToEl(start, stamp, timing, scrollEndElemTop, startScrollOffset);
+      this.scrollToEl(start, stamp, duration, scrollEndElemTop, startScrollOffset);
     })
   };
 
-  const classes = classNames(
-    className
-  );
+  render() {
+    const {
+      className,
+      children,
+      to,
+      duration,
+      onLinkClick,
+      ...props
+    } = this.props;
 
-  return (
-    <a
-      {...props}
-      className={classes}
-      href={'#' + to}
-      onClick={smoothScroll}>
-      {children}
-    </a>
-  )
+    const classes = classNames(
+      className
+    );
+
+    return (
+      <a
+        {...props}
+        className={classes}
+        href={'#' + to}
+        onClick={this.smoothScroll}>
+        {children}
+      </a>
+    );
+  }
 }
 
 SmoothScroll.propTypes = propTypes;

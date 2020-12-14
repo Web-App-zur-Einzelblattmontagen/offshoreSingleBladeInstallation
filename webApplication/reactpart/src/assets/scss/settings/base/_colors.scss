@@ -3,31 +3,31 @@
 // The color palette
 $palette: (
 	light: (
-		1: #ECEDED,
-		2: #9CA9B3,
-		3: #717D86
+		1: #DDE2F4,
+		2: #99A1BA,
+		3: #70778E
 	),
 	dark: (
-		1: #151719,
-		2: #25282C,
-		3: #33363A
+		1: #161822,
+		2: #2B2F40,
+		3: #3F455A
 	),
 	primary: (
-		1: #6163FF,
-		2: #ACADFF,
-		3: #5658DD,
-		4: #E9E9FF
+		1: #4A61DD,
+		2: #7587E4,
+		3: #2742CC,
+		4: #CCD4FF
  	),
 	secondary: (
-		1: #24E5AF,
-		2: #73EFCC,
-		3: #1CB68B,
-		4: #D2F9EE
+		1: #2EA7E2,
+		2: #60BCE8,
+		3: #1C8BC2,
+		4: #B8DFF1
 	),
 	alert: (
-		error: #FF6171,
-		warning: #FFA173,
-		success: #24E5AF
+		error: #EE5860,
+		warning: #E8A658,
+		success: #17C297
 	)
 );
 
@@ -38,7 +38,7 @@ $color: (
 	high-contrast: 			get-color(light, 1),
 	mid-contrast: 			get-color(light, 2),
 	low-contrast: 			get-color(light, 3),
-	primary:				get-color(primary, 3),
+	primary:				get-color(primary, 1),
 	secondary:				get-color(secondary, 1),
 	error:					get-color(alert, error),
 	warning:				get-color(alert, warning),
