@@ -54,7 +54,7 @@ class FeaturesSplit extends React.Component {
     );
 
     const sectionHeader = {
-      title: 'Built for your workflow',
+      title: 'Have a better understanding of offshore single blade assembly',
       paragraph: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint — occaecat cupidatat non proident, sunt in culpa qui.'
     };
 
@@ -85,7 +85,7 @@ class FeaturesSplit extends React.Component {
                   data-reveal-container=".split-item">
                   <Image
                     className="has-shadow"
-                    src={require('./../../assets/images/features-split-image-01.png')}
+                    src={require('./../../assets/images/black.jpg')}
                     alt="Features split 01"
                     width={528}
                     height={396} />
@@ -109,7 +109,7 @@ class FeaturesSplit extends React.Component {
                   data-reveal-container=".split-item">
                   <Image
                     className="has-shadow"
-                    src={require('./../../assets/images/features-split-image-02.png')}
+                    src={require('./../../assets/images/black.jpg')}
                     alt="Features split 02"
                     width={528}
                     height={396} />
@@ -133,7 +133,7 @@ class FeaturesSplit extends React.Component {
                   data-reveal-container=".split-item">
                   <Image
                     className="has-shadow"
-                    src={require('./../../assets/images/features-split-image-03.png')}
+                    src={require('./../../assets/images/black.jpg')}
                     alt="Features split 03"
                     width={528}
                     height={396} />

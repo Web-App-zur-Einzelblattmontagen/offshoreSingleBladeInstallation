@@ -29,16 +29,13 @@ class Home extends React.Component {
     render() {
 
         const genericSection01Header = {
-            title: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit'
+            title: 'Easy to use data-science Tool'
         }
 
         return (
             <React.Fragment>
                 <HeroFull className="illustration-section-01"/>
                 <FeaturesTiles/>
-                <GenericSection topDivider className="center-content">
-                    <SectionHeader data={genericSection01Header} className="reveal-from-bottom"/>
-                </GenericSection>
                 <FeaturesSplit invertMobile topDivider imageFill/>
             </React.Fragment>
         );

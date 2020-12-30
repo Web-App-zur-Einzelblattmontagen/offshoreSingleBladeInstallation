@@ -54,8 +54,8 @@ class HeroFull extends React.Component {
                             </h1>
                             <div className="container-xs">
                                 <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
-                                    Our Home page works on all devices, so you only have to set it up once, and get
-                                    beautiful results forever.
+                                    An intuitive and helpful tool for statistical analysis of measurement data, in the
+                                    context of single sheet assembly.
                                 </p>
                             </div>
                         </div>
@@ -63,7 +63,7 @@ class HeroFull extends React.Component {
                              data-reveal-delay="800">
                             <Image
                                 className="has-shadow"
-                                src={require('./../../assets/images/hero-image.png')}
+                                src={require('./../../assets/images/titlePicture')}
                                 alt="Hero"
                                 width={896}
                                 height={504}/>
