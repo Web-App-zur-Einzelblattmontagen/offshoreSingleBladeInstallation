@@ -33,6 +33,7 @@ class App extends React.Component {
             <ScrollReveal
                 ref="scrollReveal"
                 children={() => (
+
                     <Switch>
                         <AppRoute exact path="/" component={Home} layout={LayoutDefault}/>
                         <AppRoute exact path="/secondary" component={Secondary} layout={LayoutAlternative}/>
