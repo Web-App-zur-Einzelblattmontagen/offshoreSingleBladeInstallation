@@ -129,9 +129,13 @@ class FeaturesSplit extends React.Component {
                                         Detailed scientific documentation
                                     </h3>
                                     <p className="m-0">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua — Ut enim ad minim veniam, quis
-                                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+                                        In order to make the data analysis process and the functioning of the
+                                        neural networks as transparent as possible, there is a
+                                        <a target="_blank"
+                                           href="https://github.com/Web-App-zur-Einzelblattmontagen/offshoreSingleBladeAssembly/wiki"> Wiki </a>
+                                         that is freely available on Github. This can also be found directly on the
+                                        dashboard.
                                     </p>
                                 </div>
                                 <div className={
