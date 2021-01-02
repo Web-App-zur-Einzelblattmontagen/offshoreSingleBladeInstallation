@@ -133,8 +133,9 @@ class FeaturesSplit extends React.Component {
                                         In order to make the data analysis process and the functioning of the
                                         neural networks as transparent as possible, there is a
                                         <a target="_blank"
+                                           style={{ textDecoration: 'none', fontWeight: 'bold' }}
                                            href="https://github.com/Web-App-zur-Einzelblattmontagen/offshoreSingleBladeAssembly/wiki"> Wiki </a>
-                                         that is freely available on Github. This can also be found directly on the
+                                        that is freely available on Github. This can also be found directly on the
                                         dashboard.
                                     </p>
                                 </div>
