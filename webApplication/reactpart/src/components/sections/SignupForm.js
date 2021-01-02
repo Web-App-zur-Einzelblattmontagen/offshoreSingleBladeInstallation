@@ -45,7 +45,7 @@ class SignupForm extends React.Component {
     );
 
     const sectionHeader = {
-      title: 'Welcome. We exist to make data-science easier.',
+      title: 'Welcome. We make data-science easier.',
     };
 
     return (

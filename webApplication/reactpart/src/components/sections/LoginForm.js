@@ -46,7 +46,7 @@ class LoginForm extends React.Component {
     );
 
     const sectionHeader = {
-      title: 'Welcome back. We exist to make data-science easier.',
+      title: 'Welcome back. We make data-science easier.',
     };
 
     return (

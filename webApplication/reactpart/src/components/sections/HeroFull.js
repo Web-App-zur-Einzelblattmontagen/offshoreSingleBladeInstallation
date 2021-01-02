@@ -55,7 +55,7 @@ class HeroFull extends React.Component {
                             <div className="container-xs">
                                 <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
                                     An intuitive and helpful tool for statistical analysis of measurement data, in the
-                                    context of single sheet assembly.
+                                    context of single blade assembly.
                                 </p>
                             </div>
                         </div>
@@ -66,7 +66,7 @@ class HeroFull extends React.Component {
                                 src={require('./../../assets/images/titlePicture')}
                                 alt="Hero"
                                 width={896}
-                                height={504}/>
+                                height={404}/>
                         </div>
                     </div>
                 </div>

@@ -76,7 +76,7 @@ class FeaturesTiles extends React.Component {
                   </div>
                   <div className="features-tiles-item-content">
                     <h4 className="mt-0 mb-8">
-                      Join the system
+                      Detection of causalities
                     </h4>
                     <p className="m-0 text-sm">
                       A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise design.
@@ -98,7 +98,7 @@ class FeaturesTiles extends React.Component {
                   </div>
                   <div className="features-tiles-item-content">
                     <h4 className="mt-0 mb-8">
-                      Join the system
+                      Different file types
                     </h4>
                     <p className="m-0 text-sm">
                       A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise design.
@@ -120,7 +120,7 @@ class FeaturesTiles extends React.Component {
                   </div>
                   <div className="features-tiles-item-content">
                     <h4 className="mt-0 mb-8">
-                      Join the system
+                      Secure SSL-Connection
                     </h4>
                     <p className="m-0 text-sm">
                       A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise design.
@@ -142,7 +142,7 @@ class FeaturesTiles extends React.Component {
                   </div>
                   <div className="features-tiles-item-content">
                     <h4 className="mt-0 mb-8">
-                      Join the system
+                      Memory function and subsequent editing
                     </h4>
                     <p className="m-0 text-sm">
                       A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise design.
@@ -164,7 +164,7 @@ class FeaturesTiles extends React.Component {
                   </div>
                   <div className="features-tiles-item-content">
                     <h4 className="mt-0 mb-8">
-                      Join the system
+                      Responsive Design
                     </h4>
                     <p className="m-0 text-sm">
                       A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise design.
@@ -186,7 +186,7 @@ class FeaturesTiles extends React.Component {
                   </div>
                   <div className="features-tiles-item-content">
                     <h4 className="mt-0 mb-8">
-                      Join the system
+                      Optimized Page-Speed
                     </h4>
                     <p className="m-0 text-sm">
                       A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise design.
