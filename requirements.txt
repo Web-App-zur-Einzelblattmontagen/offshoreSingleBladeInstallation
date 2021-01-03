@@ -25,4 +25,5 @@ toml==0.10.2
 virtualenv==20.2.1
 virtualenvwrapper-win==1.2.6
 wcwidth==0.2.5
+whitenoise==5.2.0
 wrapt==1.12.1
