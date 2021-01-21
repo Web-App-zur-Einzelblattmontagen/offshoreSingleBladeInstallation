@@ -67,7 +67,7 @@ non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
 Please execute the following commands in a bash to start the web app in your local development environment.
 
 ```
-$ git clone https://github.com/Zelgai123/CovidTracker.git or just download as .zip
+$ git clone https://github.com/Zelgai123/CovidTracker.git
 $ cd offshoreSingleBladeInstallation
 $ npm install
 $ npm build
