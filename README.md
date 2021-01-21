@@ -34,50 +34,15 @@ Please execute the following commands in a bash to start the web app in your loc
 
 ```
 $ git clone https://github.com/Zelgai123/CovidTracker.git or just download as .zip
-$ cd CovidTracker
+$ cd offshoreSingleBladeInstallation
 $ npm install
+$ npm build
 $ npm run start
 $ open http://localhost:3000/ 
 ```
 
 
 ## Usage
-Worldwide data is displayed by default. This configuration can be changed using the drop-down menu. The data will now be adapted to the selected country.
-<br>
-<br>
-<img src="https://github.com/Zelgai123/CovidTracker/blob/main/src/images/dropdown.png"
-     alt="Covid Tracker Preview" style="width: 200px; height: auto;"/>
-<br>
-<br>
-The world map and especially the circles refer to the covid-cases by default. You can change this by clicking on one of the other two info boxes.
-<br>
-<br>
-<img src="https://github.com/Zelgai123/CovidTracker/blob/main/src/images/infoboxes.png"
-     alt="Covid Tracker Preview" style="border-radius: 5px;"/>
-<br>
-<br>
-If you click on a country-specific circle on the map, a brief overview of the current Covid situation in this country opens.
-<br>
-<br>
-<img src="https://github.com/Zelgai123/CovidTracker/blob/main/src/images/briefoverview.PNG"
-     alt="Covid Tracker Preview" style="border-radius: 5px;"/>
-<br>
-<br>
-The current Covid cases, in each country, are sorted and displayed in a scrollable list.
-<br>
-<br>
-<img src="https://github.com/Zelgai123/CovidTracker/blob/main/src/images/sortedlist.png"
-     alt="Covid Tracker Preview" style="border-radius: 5px;"/>
-<br>
-<br>
-The diagram shows the temporal course of the worldwide new Covid cases. By hovering over the diagram with the mouse, the specific data can be displayed.
-<br>
-<br>
-<img src="https://github.com/Zelgai123/CovidTracker/blob/main/src/images/datechart.png"
-     alt="Covid Tracker Preview" style="border-radius: 5px;"/>
-<br>
-<br>
-
 
 
 ## Contributing
