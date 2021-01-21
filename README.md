@@ -13,7 +13,17 @@
 
 
 ## Introduction
-Against the background of the current worldwide covid-19-pandemic, I programmed this tracker to collect and visualize the latest data and news on the subject. The front end was created with the JavaScript Framework React / Redux and the current data on the pandemic is queried by an API (https://disease.sh/). 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, 
+pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. 
+Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, 
+in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent
+per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut 
+vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor.
+Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat 
+faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. 
+Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. 
+Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, 
+non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus. 
 
 <p align="left"> 
 <a href="https://www.w3.org/html/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a>
@@ -41,8 +51,7 @@ Against the background of the current worldwide covid-19-pandemic, I programmed 
 
 <br>
 <br>
-<img src="https://github.com/Zelgai123/CovidTracker/blob/main/src/images/preview.PNG"
-     alt="Covid Tracker Preview" style="border-radius: 5px;"/>
+
 
 ## Installation
 Please execute the following commands in a bash to start the web app in your local development environment.
