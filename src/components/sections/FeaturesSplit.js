@@ -54,7 +54,7 @@ class FeaturesSplit extends React.Component {
         );
 
         const sectionHeader = {
-            title: 'Have a better understanding of offshore single blade assembly',
+            title: 'Have a better understanding of offshore single blade installation',
             paragraph: ''
         };
 
