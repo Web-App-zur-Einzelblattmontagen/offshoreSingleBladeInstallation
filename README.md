@@ -1,4 +1,4 @@
-# Offshore Single Blade Installation 💨 🌊 💧 🛥️ WebApp 🌐
+# Offshore Single Blade Installation 🛥️ WebApp 🌐
 ## <a href="https://offshoresinglebladeassembly.web.app/" target="_blank">Visit this site here!</a>
 ## An intuitive and helpful tool for statistical analysis of measurement data, in the context of single blade installation.
 
@@ -12,7 +12,7 @@
  * License
 
 
-## Introduction
+## Introduction 💨 🌊 💧
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, 
 pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. 
 Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, 
@@ -23,7 +23,7 @@ Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat
 faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. 
 Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. 
 Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, 
-non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus. 
+non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.  
 
 <p align="left">
 <b>Front-End</b>
