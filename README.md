@@ -12,18 +12,11 @@
  * License
 
 
-## Introduction 💨 🌊 💧
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, 
-pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. 
-Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, 
-in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent
-per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut 
-vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor.
-Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat 
-faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. 
-Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. 
-Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, 
-non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.  
+## Introduction
+Offshore wind already provides a substantial part of the energy mix ⚡ today. In order to further reduce the installation costs 💲, the installation process in particular should be improved.
+The installation of the blades is the greatest challenge. Relative movements between the nacelle and the blade root make the installation difficult. If the relative movement exceeds a certain threshold value, installation is no longer possible and there is an expensive delay.
+Based on measurement data 📊 that were recorded during the installation of a wind farm in the North Sea, correlations between environmental variables, such as wind speed, and accelerations of the tower, nacelle and blade are to be recognized by means of machine learning 🤖 methods.
+In a software engineering project, a web app is to be developed which, based on recorded data, outputs correlations so that engineers can then use these results for a better understanding of single sheet assembly and its environmental conditions.  
 
 <p align="left">
 <b>Front-End</b>
