@@ -18,6 +18,12 @@ Based on measurement data 📊 that were recorded during the installation of a w
 In a software engineering project, a web app is to be developed which, based on recorded data, outputs correlations so that engineers can then use these results for a better understanding of single sheet assembly and its environmental conditions.
 For more scientific information click <a href="https://github.com/Web-App-zur-Einzelblattmontagen/offshoreSingleBladeInstallation/wiki" target="_blank">here</a>.
 
+<br>
+<br>
+<img src="https://github.com/Web-App-zur-Einzelblattmontagen/offshoreSingleBladeInstallation/blob/main/src/assets/images/preview.PNG"/>
+<br>
+<br>
+
 <p align="left">
 <b>Front-End</b>
  <br>
