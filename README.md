@@ -15,7 +15,8 @@
 Offshore wind already provides a substantial part of the energy mix ⚡ today. In order to further reduce the installation costs 💲, the installation process in particular should be improved.
 The installation of the blades is the greatest challenge. Relative movements between the nacelle and the blade root make the installation difficult. If the relative movement exceeds a certain threshold value, installation is no longer possible and there is an expensive delay.
 Based on measurement data 📊 that were recorded during the installation of a wind farm in the North Sea, correlations between environmental variables, such as wind speed, and accelerations of the tower, nacelle and blade are to be recognized by means of machine learning 🤖 methods.
-In a software engineering project, a web app is to be developed which, based on recorded data, outputs correlations so that engineers can then use these results for a better understanding of single sheet assembly and its environmental conditions.  
+In a software engineering project, a web app is to be developed which, based on recorded data, outputs correlations so that engineers can then use these results for a better understanding of single sheet assembly and its environmental conditions.
+For more scientific information click <a href="https://github.com/Web-App-zur-Einzelblattmontagen/offshoreSingleBladeInstallation/wiki" target="_blank">here</a>.
 
 <p align="left">
 <b>Front-End</b>
