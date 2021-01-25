@@ -20,9 +20,3 @@ jobs:
           node-version: '15.x'
       - run: npm ci
       - run: npm build
-      - name: GitHub Action for Firebase
-        uses: w9jds/firebase-action@v1.5.0
-        with:
-          args: deploy --only hosting
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
