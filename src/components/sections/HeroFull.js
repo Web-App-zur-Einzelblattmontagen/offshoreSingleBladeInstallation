@@ -50,7 +50,7 @@ class HeroFull extends React.Component {
                     <div className={innerClasses}>
                         <div className="hero-content">
                             <h1 className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
-                                Offshore Single Blade Installation
+                                Offshore Single Blade Installation test
                             </h1>
                             <div className="container-xs">
                                 <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
