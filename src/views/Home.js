@@ -1,4 +1,4 @@
-import React from 'react';
+import React from  'react';
 // import section header
 import SectionHeader from '../components/sections/partials/SectionHeader';
 // import sections
