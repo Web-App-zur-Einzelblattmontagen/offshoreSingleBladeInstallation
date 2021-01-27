@@ -1,4 +1,4 @@
-# Offshore Single Blade Installation 🚢 WebApp 🌐 Test
+# Offshore Single Blade Installation 🚢 WebApp 🌐
 ## <a href="https://offshoresinglebladeassembly.web.app/" target="_blank">Visit this site here!</a>
 ## An intuitive and helpful tool for statistical analysis of measurement data, in the context of single blade installation.
 
