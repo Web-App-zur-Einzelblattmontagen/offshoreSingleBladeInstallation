@@ -71,7 +71,8 @@ $ cd offshoreSingleBladeInstallation
 $ npm install
 $ npm build
 $ npm run start
-$ open http://localhost:3000/ 
+
+open http://localhost:3000/ 
 ```
 
 ## Contributing
