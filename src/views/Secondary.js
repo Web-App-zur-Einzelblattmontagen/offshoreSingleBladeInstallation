@@ -14,8 +14,7 @@ import Input from '../components/elements/Input';
 import ButtonGroup from '../components/elements/ButtonGroup';
 import Button from '../components/elements/Button';
 import Modal from '../components/elements/Modal';
-import Accordion from '../components/elements/Accordion';
-import AccordionItem from '../components/elements/AccordionItem';
+
 
 class Secondary extends React.Component {
 
@@ -176,28 +175,7 @@ class Secondary extends React.Component {
           </div >
         </GenericSection>        
 
-        <GenericSection topDivider>
-          <div className="container-xs">
-            <SectionHeader data={genericSection04Header} className="center-content" />
-            <Accordion>
-              <AccordionItem title="Nisi porta lorem mollis aliquam ut." active>
-                Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
-              </AccordionItem>
-              <AccordionItem title="Nisi porta lorem mollis aliquam ut.">
-                Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
-              </AccordionItem>
-              <AccordionItem title="Nisi porta lorem mollis aliquam ut.">
-                Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
-              </AccordionItem>
-              <AccordionItem title="Nisi porta lorem mollis aliquam ut.">
-                Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
-              </AccordionItem>
-              <AccordionItem title="Nisi porta lorem mollis aliquam ut.">
-                Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
-              </AccordionItem>
-            </Accordion>
-          </div>
-        </GenericSection>        
+              
 
         <Roadmap topDivider />
         <Cta split />
