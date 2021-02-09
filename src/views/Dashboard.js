@@ -14,8 +14,8 @@ import Header from '../components/sections/Header';
 let theme = createMuiTheme({
   palette: {
     primary: {
-      light: '#161822',
-      main: '#161822',
+      light: '#232f3e',
+      main: '#18202c',
       dark: '#161822',
     },
   },
