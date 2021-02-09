@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 import {SectionProps} from '../../utils/SectionProps';
-import Button from '../elements/Button';
 import Image from '../elements/Image';
 
 const propTypes = {
