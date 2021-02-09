@@ -66,7 +66,7 @@ For more scientific information click <a href="https://github.com/Web-App-zur-Ei
 Please execute the following commands in a bash to start the web app in your local development environment.
 
 ```
-$ https://github.com/Web-App-zur-Einzelblattmontagen/offshoreSingleBladeInstallation.git
+$ git clone https://github.com/Web-App-zur-Einzelblattmontagen/offshoreSingleBladeInstallation.git
 $ cd offshoreSingleBladeInstallation
 $ npm install
 $ npm build
