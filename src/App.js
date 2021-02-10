@@ -14,6 +14,7 @@ import Secondary from './views/Secondary';
 import Login from './views/Login';
 import Signup from './views/Signup';
 import Dashboard from './views/Dashboard';
+import LayoutDefault2 from './layouts/LayoutDefault2';
 
 
 class App extends React.Component {
@@ -41,7 +42,7 @@ class App extends React.Component {
                         <AppRoute exact path="/secondary" component={Secondary} layout={LayoutAlternative}/>
                         <AppRoute exact path="/login" component={Login} layout={LayoutSignin}/>
                         <AppRoute exact path="/signup" component={Signup} layout={LayoutSignin}/>
-                        <AppRoute exact path="/dashboard" component={Dashboard} layout={LayoutSignin}/>
+                        <AppRoute exact path="/dashboard" component={Dashboard} layout={LayoutDefault2}/>
                     </Switch>
                 )}/>
         );
