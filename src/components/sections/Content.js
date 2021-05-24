@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, usEffect} from "react";
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -12,82 +12,97 @@ import IconButton from "@material-ui/core/IconButton";
 import { withStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import RefreshIcon from "@material-ui/icons/Refresh";
-
+import Job from "./Job.js"
 
 const styles = (theme) => ({
-  paper: {
-    maxWidth: "80%",
-    margin: "auto",
-    overflow: "hidden",
-  },
-  searchBar: {
-    borderBottom: "1px solid rgba(0, 0, 0, 0.12)",
-    fontSize: 25,
-  },
-  searchInput: {
-    fontSize: 25,
-  },
-  block: {
-    display: "block",
-  },
-  contentWrapper: {
-    margin: "40px 16px",
-  },
+    paper: {
+        maxWidth: "80%",
+        margin: "auto",
+        overflow: "hidden",
+    },
+    searchBar: {
+        borderBottom: "1px solid rgba(0, 0, 0, 0.12)",
+        fontSize: 20,
+    },
+    searchInput: {
+        fontSize: 20,
+    },
+    block: {
+        display: "block",
+    },
+    contentWrapper: {
+        margin: "40px 16px",
+    },
 });
 
-function Content(props) {
-  const { classes } = props;
 
-  return (
-    <Paper  className={classes.paper}>
-      <AppBar
-        className={classes.searchBar}
-        position="static"
-        color="default"
-        elevation={0}
-      >
-        <Toolbar>
-          <Grid container spacing={2} alignItems="center">
-            <Grid item>
-              <SearchIcon className={classes.block} color="inherit" />
-            </Grid>
-            <Grid item xs>
-              <TextField
-                fullWidth
-                placeholder="Search by ..."
-                InputProps={{
-                  disableUnderline: true,
-                  className: classes.searchInput,
-                }}
-              />
-            </Grid>
-            <Grid item>
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.addUser}
-                style={{ fontSize: 25 }}
-              >
-                New Job
-              </Button>
-              <Tooltip title="Reload">
-                <IconButton>
-                  <RefreshIcon className={classes.block} color="inherit" />
-                </IconButton>
-              </Tooltip>
-            </Grid>
-          </Grid>
-        </Toolbar>
-      </AppBar>
-      <div className={classes.contentWrapper}>
-        
-      </div>
-    </Paper>
-  );
+function Content(props) {
+  const [jobs, setJobs] = useState("")
+    const { classes } = props;
+
+    return (
+        <Paper className={classes.paper}>
+            <AppBar
+                className={classes.searchBar}
+                position="static"
+                color="default"
+                elevation={0}
+            >
+                <Toolbar>
+                    <Grid container spacing={2} alignItems="center">
+                        <Grid item>
+                            <SearchIcon
+                                className={classes.block}
+                                color="inherit"
+                            />
+                        </Grid>
+                        <Grid item xs>
+                            <TextField
+                                fullWidth
+                                placeholder="Search by ..."
+                                InputProps={{
+                                    disableUnderline: true,
+                                    className: classes.searchInput,
+                                }}
+                            />
+                        </Grid>
+                        <Grid item>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                className={classes.addUser}
+                                style={{ fontSize: 20 }}
+                            >
+                                New Job
+                            </Button>
+                            <Tooltip title="Reload">
+                                <IconButton>
+                                    <RefreshIcon
+                                        className={classes.block}
+                                        style={{
+                                            fontSize: 30,
+                                            marginTop: 5,
+                                            marginBottom: 5,
+                                            marginRight: 10,
+                                            marginLeft: 25,
+                                        }}
+                                        color="inherit"
+                                    />
+                                </IconButton>
+                            </Tooltip>
+                        </Grid>
+                    </Grid>
+                </Toolbar>
+            </AppBar>
+            <div className={classes.contentWrapper}>
+              <Job jobStatus={1}></Job>
+            </div>
+        </Paper>
+    );
 }
 
 Content.propTypes = {
-  classes: PropTypes.object.isRequired,
+    classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(Content);

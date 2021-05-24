@@ -84,12 +84,12 @@ const styles = (theme) => ({
 
     categoryHeaderPrimary: {
         color: theme.palette.common.white,
-        fontSize: 35,
+        fontSize: 30,
 
     },
     item: {
         paddingTop: 1,
-        fontSize: 25,
+        fontSize: 20,
         paddingBottom: 1,
 
         color: "rgba(255, 255, 255, 0.7)",
