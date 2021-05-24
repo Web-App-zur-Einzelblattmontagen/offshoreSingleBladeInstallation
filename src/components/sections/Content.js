@@ -12,25 +12,23 @@ import IconButton from "@material-ui/core/IconButton";
 import { withStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import RefreshIcon from "@material-ui/icons/Refresh";
-import JobCart from "./JobCart";
+
 
 const styles = (theme) => ({
   paper: {
-    maxWidth: 936,
+    maxWidth: "80%",
     margin: "auto",
     overflow: "hidden",
   },
   searchBar: {
     borderBottom: "1px solid rgba(0, 0, 0, 0.12)",
+    fontSize: 25,
   },
   searchInput: {
-    fontSize: theme.typography.fontSize,
+    fontSize: 25,
   },
   block: {
     display: "block",
-  },
-  addUser: {
-    marginRight: theme.spacing(1),
   },
   contentWrapper: {
     margin: "40px 16px",
@@ -41,7 +39,7 @@ function Content(props) {
   const { classes } = props;
 
   return (
-    <Paper className={classes.paper}>
+    <Paper  className={classes.paper}>
       <AppBar
         className={classes.searchBar}
         position="static"
@@ -68,6 +66,7 @@ function Content(props) {
                 variant="contained"
                 color="primary"
                 className={classes.addUser}
+                style={{ fontSize: 25 }}
               >
                 New Job
               </Button>
@@ -81,7 +80,7 @@ function Content(props) {
         </Toolbar>
       </AppBar>
       <div className={classes.contentWrapper}>
-        <JobCart />
+        
       </div>
     </Paper>
   );

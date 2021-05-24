@@ -3,11 +3,9 @@ import PropTypes from 'prop-types';
 import { createMuiTheme, ThemeProvider, withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Hidden from '@material-ui/core/Hidden';
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
 import Navigator from '../components/sections/Navigator';
 import Content from '../components/sections/Content';
-import Header from '../components/sections/Header';
+
 
 
 
@@ -177,12 +175,11 @@ function Dashboard(props) {
           </Hidden>
         </nav>
         <div className={classes.app}>
-          <Header onDrawerToggle={handleDrawerToggle} />
+          
           <main className={classes.main}>
             <Content />
           </main>
-          <footer className={classes.footer}>
-          </footer>
+          
         </div>
       </div>
     </ThemeProvider>
