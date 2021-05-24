@@ -140,7 +140,7 @@ const styles = {
   main: {
     flex: 1,
     padding: theme.spacing(6, 4),
-    background: '#eaeff1',
+    background: '#d1d9d9',
   },
   footer: {
     padding: theme.spacing(2),
@@ -158,7 +158,7 @@ function Dashboard(props) {
 
   
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme} >
       <div className={classes.root}>
         <CssBaseline />
         <nav className={classes.drawer}>

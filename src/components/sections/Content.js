@@ -19,9 +19,10 @@ const styles = (theme) => ({
         maxWidth: "80%",
         margin: "auto",
         overflow: "hidden",
+        border: "4px solid #000",
     },
     searchBar: {
-        borderBottom: "1px solid rgba(0, 0, 0, 0.12)",
+        borderBottom: "2px solid #000",
         fontSize: 20,
     },
     searchInput: {
