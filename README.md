@@ -1,5 +1,5 @@
 # Offshore Single Blade Installation 🚢 WebApp 🌐
-## <a href="https://offshoresinglebladeassembly.web.app/" target="_blank">Visit this site here!</a>
+## <a href="https://osbi-bik.web.app" target="_blank">Visit this site here!</a>
 ## An intuitive and helpful tool for statistical analysis of measurement data, in the context of single blade installation.
 
 ### CONTENTS OF THIS FILE
