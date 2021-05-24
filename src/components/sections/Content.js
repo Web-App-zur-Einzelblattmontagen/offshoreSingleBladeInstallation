@@ -1,4 +1,4 @@
-import React, {useState, usEffect} from "react";
+import React, { useState, usEffect } from "react";
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -12,7 +12,7 @@ import IconButton from "@material-ui/core/IconButton";
 import { withStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import RefreshIcon from "@material-ui/icons/Refresh";
-import Job from "./Job.js"
+import Job from "./Job.js";
 
 const styles = (theme) => ({
     paper: {
@@ -35,9 +35,59 @@ const styles = (theme) => ({
     },
 });
 
-
 function Content(props) {
-  const [jobs, setJobs] = useState("")
+    const [jobs, setJobs] = useState([
+        {
+            jobId: 347538392,
+            jobStatus: true,
+            jobName: "zzodhdhhshsuzehsh",
+            jobDate: "30.04.2021, 17:45",
+        },
+        {
+            jobId: 92909482,
+            jobStatus: false,
+            jobName: "Test345",
+            jobDate: "01.04.2021, 12:45",
+        },
+        {
+            jobId: 347538392,
+            jobStatus: true,
+            jobName: "zzodhdhhshsuzehsh",
+            jobDate: "30.04.2021, 17:45",
+        },
+        {
+            jobId: 92909482,
+            jobStatus: false,
+            jobName: "Test345",
+            jobDate: "01.04.2021, 12:45",
+        },
+        {
+            jobId: 347538392,
+            jobStatus: true,
+            jobName: "zzodhdhhshsuzehsh",
+            jobDate: "30.04.2021, 17:45",
+        },
+        
+        {
+            jobId: 92909482,
+            jobStatus: false,
+            jobName: "Test345",
+            jobDate: "01.04.2021, 12:45",
+        },
+        {
+            jobId: 347538392,
+            jobStatus: true,
+            jobName: "zzodhdhhshsuzehsh",
+            jobDate: "30.04.2021, 17:45",
+        },
+        {
+            jobId: 92909482,
+            jobStatus: false,
+            jobName: "Test345",
+            jobDate: "01.04.2021, 12:45",
+        },
+    ]);
+
     const { classes } = props;
 
     return (
@@ -95,7 +145,16 @@ function Content(props) {
                 </Toolbar>
             </AppBar>
             <div className={classes.contentWrapper}>
-              <Job jobStatus={1}></Job>
+                {jobs.map((j) => {
+                    return (
+                        <Job
+                            jobId={j.jobId}
+                            jobStatus={j.jobStatus}
+                            jobName={j.jobName}
+                            jobDate={j.jobDate}
+                        ></Job>
+                    );
+                })}
             </div>
         </Paper>
     );
