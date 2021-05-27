@@ -27,19 +27,12 @@ jobs:
               with:
                   name: build
                   path: build
-    tests:
-        name: "Unit tests"
+    test:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout Repo
-              uses: actions/checkout@v2.3.2
-            - name: Install Dependencies
-              run: npm install
-            - name: Test
-              env:
-                  CI: ""
-              run: npm test
-
+            - uses: actions/checkout@v1
+            - name: Run Jest
+              uses: stefanoeb/jest-action@1.0.3
     deploy:
         name: Deploy
         needs: build
