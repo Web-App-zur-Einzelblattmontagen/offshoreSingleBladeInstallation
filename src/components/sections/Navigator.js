@@ -65,14 +65,6 @@ const categories = [
     id: "Settings",
     children: [
       {
-        id: "Delete Account",
-        icon: <DeleteIcon style={{ fontSize: 25 }} />,
-      },
-      {
-        id: "Reset Password",
-        icon: <CachedIcon style={{ fontSize: 25 }} />,
-      },
-      {
         id: "Logout",
         icon: <ExitToAppIcon style={{ fontSize: 25 }} />,
         onClick: "DS",
