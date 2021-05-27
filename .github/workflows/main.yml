@@ -27,7 +27,8 @@ jobs:
               with:
                   name: build
                   path: build
-    build:
+    test:
+      name: Test
       runs-on: ubuntu-latest
       strategy:
         matrix:
