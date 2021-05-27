@@ -1,7 +1,8 @@
 import React from "react";
+import { useState } from "react";
 import classNames from "classnames";
 import { SectionProps } from "../../utils/SectionProps";
-import { Link } from "react-router-dom";
+import { Link, useHistory, Redirect } from "react-router-dom";
 import SectionHeader from "./partials/SectionHeader";
 import Input from "../elements/Input";
 import Button from "../elements/Button";
@@ -13,6 +14,7 @@ import {
   setActiveUser,
   setUserLogOutState,
   selectUserEmail,
+  selectUserID,
   selectUserName,
 } from "../../store/userSlice";
 import { Autocomplete } from "@material-ui/lab";
@@ -26,37 +28,38 @@ const defaultProps = {
 };
 
 function SignupForm() {
+  const history = useHistory();
+  const [showDashboardButton, setShowDashboardButton] = useState();
   const dispatch = useDispatch();
 
   const userName = useSelector(selectUserName);
   const userEmail = useSelector(selectUserEmail);
+  const userID = useSelector(selectUserID);
 
-  const handleSignIn = () => {
-    auth()
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    auth
       .signInWithPopup(provider)
       .then((result) => {
         dispatch(
           setActiveUser({
             userName: result.user.displayName,
             userEmail: result.user.email,
+            userID: result.user.uid,
           })
         );
-        var credential = result.credential;
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = credential.accessToken;
-        // The signed-in user info.
-        var user = result.user;
-        // ...
+        localStorage.setItem("userName", result.user.displayName);
+        localStorage.setItem("userEmail", result.user.email);
+        localStorage.setItem("userID", result.user.uid);
+        if (!!localStorage.getItem("userID")) {
+          history.push("/");
+        }
       })
       .catch((error) => {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
+        alert(errorMessage);
       });
   };
 
@@ -89,7 +92,6 @@ function SignupForm() {
   const sectionHeader = {
     title: "Welcome. We make data-science easier.",
   };
-
   return (
     <section className={outerClasses}>
       <div className="container">
@@ -129,14 +131,6 @@ function SignupForm() {
                     </div>
                   </fieldset>
                 </form>
-                <div className="signin-bottom has-top-divider">
-                  <div className="pt-32 text-xs center-content text-color-low">
-                    Already have an account?{" "}
-                    <Link to="/login/" className="func-link">
-                      Login
-                    </Link>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

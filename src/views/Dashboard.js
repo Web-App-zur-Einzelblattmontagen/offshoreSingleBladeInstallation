@@ -7,7 +7,9 @@ import Navigator from '../components/sections/Navigator';
 import Content from '../components/sections/Content';
 
 
-
+const userName = localStorage.getItem("userName")
+const userEmail = localStorage.getItem("userEmail")
+const userID = localStorage.getItem("userID")
 
 let theme = createMuiTheme({
   palette: {
@@ -159,6 +161,7 @@ function Dashboard(props) {
   
   return (
     <ThemeProvider theme={theme} >
+      {console.log(userEmail, userName, userID)}
       <div className={classes.root}>
         <CssBaseline />
         <nav className={classes.drawer}>
