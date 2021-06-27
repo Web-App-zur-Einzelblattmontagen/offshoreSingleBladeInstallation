@@ -72,12 +72,12 @@ class FeaturesSplit extends React.Component {
                                 <div className="split-item-content center-content-mobile reveal-from-left"
                                      data-reveal-container=".split-item">
                                     <h3 className="mt-0 mb-12">
-                                        Customizable Dashboard
+                                        Interactive data visualization
                                     </h3>
                                     <p className="m-0">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua — Ut enim ad minim veniam, quis
-                                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        With the help of our homepage you can upload and evaluate data measured by
+                                        sensors. You have the option to visualize the uploaded data individually or to
+                                        determine correlations via neural network.
                                     </p>
                                 </div>
                                 <div className={
@@ -88,9 +88,10 @@ class FeaturesSplit extends React.Component {
                                      data-reveal-container=".split-item">
                                     <Image
                                         className="has-shadow"
-                                        src={require('./../../assets/images/black.jpg')}
+                                        src={require('./../../assets/images/undraw_Report_re_kp7y.png')}
                                         alt="Features split 01"
                                         width={528}
+                                        style={{borderRadius: "10px"}}
                                         height={396}/>
                                 </div>
                             </div>
@@ -99,12 +100,21 @@ class FeaturesSplit extends React.Component {
                                 <div className="split-item-content center-content-mobile reveal-from-right"
                                      data-reveal-container=".split-item">
                                     <h3 className="mt-0 mb-12">
-                                        Interactive data visualization
+                                        Code is open source
                                     </h3>
                                     <p className="m-0">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua — Ut enim ad minim veniam, quis
-                                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        The complete code of this homepage is open source and can be accessed
+                                        <a target="_blank"
+                                           style={{textDecoration: 'none', fontWeight: 'bold'}}
+                                           href="https://github.com/Web-App-zur-Einzelblattmontagen/offshoreSingleBladeInstallation"> here</a>.
+                                        You can adapt the analysis methods to your own needs and further develop the
+                                        homepage locally. There is a chapter in the documentation
+                                        <a target="_blank"
+                                           style={{textDecoration: 'none', fontWeight: 'bold'}}
+                                           href="https://github.com/Web-App-zur-Einzelblattmontagen/offshoreSingleBladeInstallation/wiki/Setup-for-Local-Development"> "Setup
+                                            for local development" </a>
+                                        that describes the
+                                        practical introduction to this configuration.
                                     </p>
                                 </div>
                                 <div className={
@@ -115,9 +125,10 @@ class FeaturesSplit extends React.Component {
                                      data-reveal-container=".split-item">
                                     <Image
                                         className="has-shadow"
-                                        src={require('./../../assets/images/black.jpg')}
+                                        src={require('./../../assets/images/undraw_Code_review_re_woeb.png')}
                                         alt="Features split 02"
                                         width={528}
+                                        style={{borderRadius: "10px"}}
                                         height={396}/>
                                 </div>
                             </div>
@@ -129,11 +140,10 @@ class FeaturesSplit extends React.Component {
                                         Detailed scientific documentation
                                     </h3>
                                     <p className="m-0">
-
                                         In order to make the data analysis process and the functioning of the
                                         neural networks as transparent as possible, there is a
                                         <a target="_blank"
-                                           style={{ textDecoration: 'none', fontWeight: 'bold' }}
+                                           style={{textDecoration: 'none', fontWeight: 'bold'}}
                                            href="https://github.com/Web-App-zur-Einzelblattmontagen/offshoreSingleBladeAssembly/wiki"> Wiki </a>
                                         that is freely available on Github. This can also be found directly on the
                                         dashboard.
@@ -147,9 +157,10 @@ class FeaturesSplit extends React.Component {
                                      data-reveal-container=".split-item">
                                     <Image
                                         className="has-shadow"
-                                        src={require('./../../assets/images/black.jpg')}
+                                        src={require('./../../assets/images/undraw_online_articles_79ff.png')}
                                         alt="Features split 03"
                                         width={528}
+                                        style={{borderRadius: "10px"}}
                                         height={396}/>
                                 </div>
                             </div>

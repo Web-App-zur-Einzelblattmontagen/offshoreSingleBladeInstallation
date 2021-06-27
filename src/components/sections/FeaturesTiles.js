@@ -103,7 +103,7 @@ class FeaturesTiles extends React.Component {
                                         </h4>
                                         <p className="m-0 text-sm">
                                             Various file types can be used. These
-                                            include, for example: Excel, CSV, Pickle, Pandas Dataframe and JSON.
+                                            include, for example: Excel, CSV and Pandas Dataframe.
                                         </p>
                                     </div>
                                 </div>
@@ -146,11 +146,11 @@ class FeaturesTiles extends React.Component {
                                     </div>
                                     <div className="features-tiles-item-content">
                                         <h4 className="mt-0 mb-8">
-                                            Memory function
+                                            Expandability
                                         </h4>
                                         <p className="m-0 text-sm">
-                                            Saving generated plots and editing them afterwards is no problem at all
-                                            using our data analysis tool.
+                                            You can individually expand the existing analysis functions and adapt the
+                                            process to your needs.
                                         </p>
                                     </div>
                                 </div>

@@ -64,6 +64,7 @@ class HeroFull extends React.Component {
                                 className="has-shadow"
                                 src={require('./../../assets/images/titlePicture')}
                                 alt="Hero"
+                                style={{borderRadius: "10px"}}
                                 width={896}
                                 height={404}/>
                         </div>
