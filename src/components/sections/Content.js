@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Image from "../elements/Image";
+import Typography from "@material-ui/core/Typography";
+import CsvParse from "@vtex/react-csv-parse";
+
+const handleFileUpload = (event) => {};
 
 const styles = (theme) => ({
   paper: {
@@ -27,7 +30,30 @@ const styles = (theme) => ({
   },
 });
 
+const keys = [
+  "epoch",
+  "acc_x",
+  "acc_y",
+  "acc_z",
+  "vel_x",
+  "vel_y",
+  "vel_z",
+  "pos_x",
+  "pos_y",
+  "pos_z",
+  "deflection",
+];
+
 function Content(props) {
+  const [data, setData] = useState({});
+
+  const handleData = (data) => {
+    setData({ data });
+    console.log(data);
+  };
+  const handleError = (e) => {
+    console.log(e);
+  };
   const { classes } = props;
 
   return (
@@ -37,21 +63,31 @@ function Content(props) {
       justify="space-around"
       alignItems="center"
     >
-      <br />
       <Grid item>
-        <Button variant="contained" color="primary">
-          Upload your data!
-        </Button>
+        <Typography
+          variant="h4"
+          align="center"
+          gutterBottom
+          style={{ color: "#2a3eb1" }}
+        >
+          <b>Upload your data!</b>
+        </Typography>
+      </Grid>
+      <Grid item>
+        <CsvParse
+          keys={keys}
+          onDataUploaded={handleData}
+          onError={handleError}
+          render={(onChange) => <input type="file" onChange={onChange} />}
+        />
       </Grid>
       <br />
-      <br />
-      <Grid item lg={10} md={10} sm={10} xs={10} >
+      <Grid item lg={10} md={10} sm={10} xs={10}>
         <Image
           className="has-shadow"
           src={require("./../../assets/images/undraw_online_articles_79ff.png")}
           alt="Features split 01"
           style={{ borderRadius: "20px" }}
-
         />
       </Grid>
     </Grid>

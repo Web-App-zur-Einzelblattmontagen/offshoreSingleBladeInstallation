@@ -161,7 +161,6 @@ function Dashboard(props) {
   
   return (
     <ThemeProvider theme={theme} >
-      {console.log(userEmail, userName, userID)}
       <div className={classes.root}>
         <CssBaseline />
         <nav className={classes.drawer}>
