@@ -6,7 +6,6 @@ import Hidden from '@material-ui/core/Hidden';
 import Navigator from '../components/sections/Navigator';
 import Content from '../components/sections/Content';
 
-
 const userName = localStorage.getItem("userName")
 const userEmail = localStorage.getItem("userEmail")
 const userID = localStorage.getItem("userID")

@@ -5,6 +5,20 @@ import Grid from "@material-ui/core/Grid";
 import Image from "../elements/Image";
 import Typography from "@material-ui/core/Typography";
 import CsvParse from "@vtex/react-csv-parse";
+import {
+  LineChart,
+  AreaChart,
+  Line,
+  XAxis,
+  Area,
+  YAxis,
+  Bar,
+  ComposedChart,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 
 const handleFileUpload = (event) => {};
 
@@ -48,7 +62,7 @@ function Content(props) {
   const [data, setData] = useState({});
 
   const handleData = (data) => {
-    setData({ data });
+    setData(data);
     console.log(data);
   };
   const handleError = (e) => {
@@ -63,7 +77,7 @@ function Content(props) {
       justify="space-around"
       alignItems="center"
     >
-      <Grid item>
+      <Grid>
         <Typography
           variant="h4"
           align="center"
@@ -72,8 +86,6 @@ function Content(props) {
         >
           <b>Upload your data!</b>
         </Typography>
-      </Grid>
-      <Grid item>
         <CsvParse
           keys={keys}
           onDataUploaded={handleData}
@@ -83,12 +95,29 @@ function Content(props) {
       </Grid>
       <br />
       <Grid item lg={10} md={10} sm={10} xs={10}>
-        <Image
-          className="has-shadow"
-          src={require("./../../assets/images/undraw_online_articles_79ff.png")}
-          alt="Features split 01"
-          style={{ borderRadius: "20px" }}
-        />
+        <LineChart
+          width={700}
+          height={700}
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis domain={[-0.03, 0.03]} />
+          <Tooltip />
+          <Legend />
+          <Line
+            type="monotone"
+            dataKey="pos_x"
+            stroke="#8884d8"
+            activeDot={{ r: 8 }}
+          />
+        </LineChart>
       </Grid>
     </Grid>
   );
