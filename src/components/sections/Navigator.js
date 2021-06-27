@@ -1,46 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core/styles";
-import Divider from "@material-ui/core/Divider";
+import Image from "../elements/Image";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import HomeIcon from "@material-ui/icons/Home";
-import DnsRoundedIcon from "@material-ui/icons/DnsRounded";
-import PermMediaOutlinedIcon from "@material-ui/icons/PhotoSizeSelectActual";
-import SettingsIcon from "@material-ui/icons/Settings";
-import Logo from "../layout/partials/Logo.js";
-import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
+
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
-import DeleteIcon from "@material-ui/icons/Delete";
-import CachedIcon from "@material-ui/icons/Cached";
+
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import ContactsIcon from "@material-ui/icons/Contacts";
-import {useHistory} from "react-router-dom"
+import { useHistory } from "react-router-dom";
 
 const categories = [
-  {
-    id: "Analyse",
-    children: [
-      {
-        id: "Job-List",
-        icon: <PlaylistPlayIcon style={{ fontSize: 35 }} />,
-        active: true,
-      },
-      {
-        id: "Stored Datasets",
-        icon: <DnsRoundedIcon style={{ fontSize: 25 }} />,
-      },
-      {
-        id: "Plots",
-        icon: <PermMediaOutlinedIcon style={{ fontSize: 25 }} />,
-      },
-    ],
-  },
+
   {
     id: "Help",
     children: [
@@ -119,17 +96,21 @@ const styles = (theme) => ({
   },
 });
 
-const logoutHandler = () => {
-  
-};
-
 function Navigator(props) {
-    const history = useHistory()
-    const { classes, ...other } = props;
+  const history = useHistory();
+  const { classes, ...other } = props;
 
   return (
+    
     <Drawer variant="permanent" className={classes.drawer}>
       <List disablePadding>
+      <Image
+                    className="has-shadow"
+                    src={require("./../../assets/images/bikLogo.svg")}
+                    alt="Features split 02"
+
+                    style={{ borderRadius: "10px", padding: "20px", width: "250px" }}
+                  />
         {categories.map(({ id, children }) => (
           <React.Fragment key={id}>
             <ListItem className={classes.categoryHeader}>
@@ -142,12 +123,18 @@ function Navigator(props) {
               </ListItemText>
             </ListItem>
             {children.map(({ id: childId, icon, active, link }) => (
-              <div onClick={childId === "Logout" ?  () =>{
-                localStorage.setItem("userName", "")
-                localStorage.setItem("userEmail", "")
-                localStorage.setItem("userID", "")
-                history.push("/signUp");
-              } : console.log()}>
+              <div
+                onClick={
+                  childId === "Logout"
+                    ? () => {
+                        localStorage.setItem("userName", "");
+                        localStorage.setItem("userEmail", "");
+                        localStorage.setItem("userID", "");
+                        history.push("/signUp");
+                      }
+                    : console.log()
+                }
+              >
                 <a
                   href={link}
                   style={{ textDecoration: "none" }}

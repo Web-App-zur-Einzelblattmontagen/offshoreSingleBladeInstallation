@@ -1,23 +1,16 @@
 import React from "react";
-import { useState } from "react";
+
 import classNames from "classnames";
 import { SectionProps } from "../../utils/SectionProps";
-import { Link, useHistory, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import SectionHeader from "./partials/SectionHeader";
-import Input from "../elements/Input";
+
 import Button from "../elements/Button";
 import googleLogo from "../../assets/images/google.png";
 
 import { auth, provider } from "../../firebase";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  setActiveUser,
-  setUserLogOutState,
-  selectUserEmail,
-  selectUserID,
-  selectUserName,
-} from "../../store/userSlice";
-import { Autocomplete } from "@material-ui/lab";
+import { useDispatch } from "react-redux";
+import { setActiveUser } from "../../store/userSlice";
 
 const propTypes = {
   ...SectionProps.types,
@@ -29,12 +22,8 @@ const defaultProps = {
 
 function SignupForm() {
   const history = useHistory();
-  const [showDashboardButton, setShowDashboardButton] = useState();
-  const dispatch = useDispatch();
 
-  const userName = useSelector(selectUserName);
-  const userEmail = useSelector(selectUserEmail);
-  const userID = useSelector(selectUserID);
+  const dispatch = useDispatch();
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -57,7 +46,6 @@ function SignupForm() {
       })
       .catch((error) => {
         // Handle Errors here.
-        var errorCode = error.code;
         var errorMessage = error.message;
         alert(errorMessage);
       });
