@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import PropTypes from "prop-types";
 import {withStyles} from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -8,10 +8,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Chart from "./Chart"
-
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-
+import FormHelperText from '@material-ui/core/FormHelperText';
+import TextField from "@material-ui/core/TextField"
 
 const styles = (theme) => ({
     paper: {
@@ -72,9 +70,13 @@ const keys = [
 
 function Content(props) {
     const [data, setData] = useState({});
+    const [average, setAverage] = useState(0)
+    const [standardDeviation, setStandardDeviation] = useState(0)
+    const [variance, setVariance] = useState(0)
     const [chartType, setChartType] = useState("LineChart");
-    const [yAxisLabel, setYAxisLabel] = useState("")
-
+    const [yAxisLabel, setYAxisLabel] = useState("deflection")
+    const [yAxisStart, setYAxisStart] = useState(-0.5)
+    const [yAxisEnd, setYAxisEnd] = useState(0.5)
     const chartTypeChange = (e) => {
         setChartType(e.target.value)
     }
@@ -85,12 +87,51 @@ function Content(props) {
 
     const handleData = (data) => {
         setData(data);
-        console.log(data);
     };
     const handleError = (e) => {
         console.log(e);
     };
     const {classes} = props;
+    useEffect(() => {
+            try {
+                let sum = 0
+                for (let i = 0; i < data.length; i++) {
+                    let number = data[i]
+                    let float = parseFloat(number[yAxisLabel])
+                    sum += float
+                }
+                sum = sum / (data.length)
+                setAverage(sum)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        , [data, yAxisLabel])
+
+    useEffect(() => {
+        try {
+            let sum = 0;
+            for (let i = 0; i < data.length; i++) {
+                let number = data[i]
+                let float = parseFloat(number[yAxisLabel])
+                let helper = float - average
+                console.log(helper)
+                sum += helper * helper
+            }
+            sum = sum / (data.length)
+            setVariance(sum)
+        } catch (error) {
+            console.log(error)
+        }
+    }, [average, data, yAxisLabel])
+
+    useEffect(() => {
+        try {
+            setStandardDeviation(Math.sqrt(variance))
+        } catch (error) {
+            console.log(error)
+        }
+    }, [average, variance, data, yAxisLabel])
 
     return (
         <Grid
@@ -116,22 +157,29 @@ function Content(props) {
                 />
             </Grid>
             <br/>
+            <Typography
+                variant="p"
+                align="center"
+                gutterBottom
+                style={{color: "#2a3eb1"}}
+            >
+                <b>If you have no data, you can easily download here: &emsp;
+                    <a href='/testdatei_plots.csv' download style={{textDecoration: "none"}}>Small testfile</a> &emsp;
+                    <a href='/testdatei_plots_lang.csv' download style={{textDecoration: "none"}}>Large testfile</a></b>
+            </Typography>
             <br/>
             <Grid container direction="row" justify="space-between" alignItems="flex-start">
                 <Grid item lg={5} md={5} sm={5} xs={5}>
-                    {/* TODO: Chart props übergeben */}
-                    <Chart data={data} yAxisLabel={yAxisLabel}
-                            chartType={chartType} style={{marginLeft: 10}}/>
+
+                    <Chart data={data} yAxisLabel={yAxisLabel} yAxisStart={yAxisStart} yAxisEnd={yAxisEnd}
+                           chartType={chartType} style={{marginLeft: 10}}/>
                 </Grid>
                 <Grid item lg={5} md={5} sm={5} xs={5}
                       style={{border: "3px solid black", borderRadius: "8px", width: "100%"}}>
                     <Typography align="center" variant="h5" style={{color: "#2a3eb1"}}> Edit Plot!</Typography>
-                    <hr/>
-                    <Grid container direction="column" justify="flex-start" alignItems="center"
+                    <br/>
+                    <Grid container direction="row" justify="space-around" alignItems="flex-start"
                     >
-                        <Grid item>
-                            <Typography variant="p" style={{color: "#2a3eb1"}}><b>Select the Chart-Type</b></Typography>
-                        </Grid>
                         <Grid item>
                             <FormControl variant="outlined" className={classes.formControl}>
                                 <Select
@@ -144,37 +192,79 @@ function Content(props) {
                                     <MenuItem value={"AreaChart"}>AreaChart</MenuItem>
                                     <MenuItem value={"ScatterChart"}>ScatterChart</MenuItem>
                                 </Select>
+                                <FormHelperText>Select the chart type</FormHelperText>
                             </FormControl>
                         </Grid>
+                        <Grid item>
+                            <FormControl variant="outlined" className={classes.formControl}>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={yAxisLabel}
+                                    onChange={yAxisLabelChange}
+                                >
+                                    <MenuItem value={"deflection"}>Deflection</MenuItem>
+                                    <MenuItem value={"acc_x"}>Acceleration X</MenuItem>
+                                    <MenuItem value={"acc_y"}>Acceleration Y</MenuItem>
+                                    <MenuItem value={"acc_z"}>Acceleration Z</MenuItem>
+                                    <MenuItem value={"vel_x"}>Velocity X</MenuItem>
+                                    <MenuItem value={"vel_y"}>Velocity Y</MenuItem>
+                                    <MenuItem value={"vel_z"}>Velocity Z</MenuItem>
+                                    <MenuItem value={"pos_x"}>Position X</MenuItem>
+                                    <MenuItem value={"pos_y"}>Position Y</MenuItem>
+                                    <MenuItem value={"pos_z"}>Position Z</MenuItem>
+                                </Select>
+                                <FormHelperText>Select the y-axis label</FormHelperText>
+                            </FormControl>
+                        </Grid>
+
+                        <Grid item style={{marginTop: "20px"}}>
+                            <FormControl variant="outlined" className={classes.formControl}>
+                                <TextField required id="standard-required" label="Y-Axis Startpoint"
+                                           defaultValue={yAxisStart}
+                                           variant="filled"
+                                           onChange={e => setYAxisStart(Number(e.target.value))}/>
+                            </FormControl>
+                        </Grid>
+                        <Grid item style={{marginTop: "20px"}}>
+                            <FormControl variant="outlined" className={classes.formControl}>
+                                <TextField required id="standard-required" label="Y-Axis Endpoint"
+                                           defaultValue={yAxisEnd} variant={"filled"}
+                                           onChange={e => setYAxisEnd(Number(e.target.value))}/>
+                            </FormControl>
+                        </Grid>
+
                     </Grid>
                     <hr/>
-                    <Grid container direction="column" justify="flex-start" alignItems="center">
-                        <Grid item><Typography variant="p" style={{color: "#2a3eb1"}}><b>Change the
-                            Y-Axis label and intervall</b></Typography></Grid>
-                        <Grid item><FormControl variant="outlined" className={classes.formControl}>
-                            <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-                                value={yAxisLabel}
-                                onChange={yAxisLabelChange}
-                            >
-                                <MenuItem value={"deflection"}>Deflection</MenuItem>
-                                <MenuItem value={"acc_x"}>Acceleration X</MenuItem>
-                                <MenuItem value={"acc_y"}>Acceleration Y</MenuItem>
-                                <MenuItem value={"acc_z"}>Acceleration Z</MenuItem>
-                                <MenuItem value={"vel_x"}>Velocity X</MenuItem>
-                                <MenuItem value={"vel_y"}>Velocity Y</MenuItem>
-                                <MenuItem value={"vel_z"}>Velocity Z</MenuItem>
-                                <MenuItem value={"pos_x"}>Position X</MenuItem>
-                                <MenuItem value={"pos_y"}>Position Y</MenuItem>
-                                <MenuItem value={"pos_z"}>Position Z</MenuItem>
-                            </Select>
-                        </FormControl></Grid>
-
+                    <Typography align="center" variant="h5" style={{color: "#2a3eb1"}}> Data Evaluation</Typography>
+                    <br/>
+                    <Grid container direction="row" justify="space-around" alignItems="flex-start"
+                    >
+                        <Grid item>
+                            <Typography align="center" variant="p" style={{color: "#2a3eb1"}}>
+                                <b>Avarage</b>
+                            </Typography>
+                            <br/>
+                            {average}
+                        </Grid>
+                        <Grid item>
+                            <Typography align="center" variant="p" style={{color: "#2a3eb1"}}>
+                                <b>Variance</b>
+                            </Typography>
+                            <br/>
+                            {variance}
+                        </Grid>
+                        <Grid item> <Typography align="center" variant="p" style={{color: "#2a3eb1"}}>
+                            <b>Standard Deviation</b>
+                        </Typography>
+                            <br/>
+                            {standardDeviation}
+                        </Grid>
                     </Grid>
                 </Grid>
             </Grid>
         </Grid>
+
     );
 }
 

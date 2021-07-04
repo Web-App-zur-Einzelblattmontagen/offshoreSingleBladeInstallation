@@ -14,6 +14,7 @@
     "@vtex/react-csv-parse": "^3.0.2",
     "chart.js": "^3.4.0",
     "classnames": "^2.2.6",
+    "file-saver": "^2.0.5",
     "firebase": "^8.6.2",
     "firebase-tools": "^9.12.0",
     "lodash": "^4.17.15",
@@ -26,6 +27,7 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
     "recharts": "^2.0.9",
+    "recharts-to-png": "^1.1.0",
     "xlsx": "^0.17.0"
   },
   "scripts": {

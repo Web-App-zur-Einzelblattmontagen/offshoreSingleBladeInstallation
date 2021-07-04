@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {
     Area,
     AreaChart,
@@ -12,100 +12,156 @@ import {
     XAxis,
     YAxis
 } from "recharts";
+import Button from "@material-ui/core/Button"
+import Grid from "@material-ui/core/Grid"
+import {useCurrentPng} from "recharts-to-png";
+import FileSaver from "file-saver";
 
 function Chart(props) {
+    const [getPng, {ref, isLoading}] = useCurrentPng();
+    const handleDownload = useCallback(async () => {
+        const png = await getPng();
 
+        // Verify that png is not undefined
+        if (png) {
+            // Download with FileSaver
+            FileSaver.saveAs(png, 'myChart.png');
+        }
+    }, [getPng]);
 
     if ((props.chartType) === "LineChart") {
         return (
+            <Grid container direction="column"
+                  justify="space-around"
+                  alignItems="center">
+                <Grid item>
+                    <LineChart
+                        ref={ref}
+                        width={700}
+                        height={700}
+                        data={props.data}
+                        margin={{
+                            top: 5,
+                            right: 30,
+                            left: 20,
+                            bottom: 5,
+                        }}
+                    >
+                        <CartesianGrid strokeDasharray="3 3"/>
+                        <XAxis dataKey={"time"}
+                               label={{value: "time", position: 'insideBottomRight', offset: -20}}
 
-            <LineChart
-                width={700}
-                height={700}
-                data={props.data}
-                margin={{
-                    top: 5,
-                    right: 30,
-                    left: 20,
-                    bottom: 5,
-                }}
-            >
-                <CartesianGrid strokeDasharray="3 3"/>
-                <XAxis dataKey={"time"}
-                       label={{value: "time", position: 'insideBottomRight', offset: -5}}
+                        />
+                        <YAxis dataKey={props.yAxisLabel}
+                               label={{value: props.yAxisLabel, angle: -90, position: 'insideLeft'}}
+                               domain={[props.yAxisStart, props.yAxisEnd]}/>
+                        <Tooltip/>
+                        <Legend/>
+                        <Line
+                            type="monotone"
+                            dataKey={props.yAxisLabel}
+                            stroke="#8884d8"
+                            activeDot={{r: 8}}
+                        />
+                    </LineChart>
+                </Grid>
+                <br/>
+                <Grid item>
+                    <Button variant="outlined" style={{color: "#2a3eb1"}} onClick={handleDownload}>
+                        Download Plot as PNG
+                    </Button>
+                </Grid>
+            </Grid>
 
-                />
-                <YAxis dataKey={props.yAxisLabel} label={{value: props.yAxisLabel, angle: -90, position: 'insideLeft'}}
-                       domain={[-0.5, 0.5]}/>
-                <Tooltip/>
-                <Legend/>
-                <Line
-                    type="monotone"
-                    dataKey={props.yAxisLabel}
-                    stroke="#8884d8"
-                    activeDot={{r: 8}}
-                />
-            </LineChart>
+
         );
     } else if ((props.chartType) === "AreaChart") {
         return (
-            <AreaChart
-                width={700}
-                height={700}
-                data={props.data}
-                margin={{
-                    top: 5,
-                    right: 30,
-                    left: 20,
-                    bottom: 5,
-                }}
-            >
-                <CartesianGrid strokeDasharray="3 3"/>
-                <XAxis dataKey={"time"}
-                       label={{value: "time", position: 'insideBottomRight', offset: -5}}
+            <Grid container direction="column"
+                  justify="space-around"
+                  alignItems="center">
+                <Grid item>
+                    <AreaChart
+                        ref={ref}
+                        width={700}
+                        height={700}
+                        data={props.data}
+                        margin={{
+                            top: 5,
+                            right: 30,
+                            left: 20,
+                            bottom: 5,
+                        }}
+                    >
+                        <CartesianGrid strokeDasharray="3 3"/>
+                        <XAxis dataKey={"time"}
+                               label={{value: "time", position: 'insideBottomRight', offset: -20}}
 
-                />
-                <YAxis dataKey={props.yAxisLabel} label={{value: props.yAxisLabel, angle: -90, position: 'insideLeft'}}
-                       domain={[-0.5, 0.5]}/>
-                <Tooltip/>
-                <Legend/>
-                <Area
-                    type="monotone"
-                    dataKey={props.yAxisLabel}
-                    stroke="#8884d8"
-                    activeDot={{r: 8}}
-                />
-            </AreaChart>
+                        />
+                        <YAxis dataKey={props.yAxisLabel}
+                               label={{value: props.yAxisLabel, angle: -90, position: 'insideLeft'}}
+                               domain={[props.yAxisStart, props.yAxisEnd]}/>
+                        <Tooltip/>
+                        <Legend/>
+                        <Area
+                            type="monotone"
+                            dataKey={props.yAxisLabel}
+                            stroke="#8884d8"
+                            activeDot={{r: 8}}
+                        />
+                    </AreaChart>
+                </Grid>
+                <br/>
+                <Grid item>
+                    <Button variant="outlined" style={{color: "#2a3eb1"}} onClick={handleDownload}>
+                        Download Plot as PNG
+                    </Button>
+                </Grid>
+            </Grid>
         )
     } else {
         return (
-            <ScatterChart
-                width={700}
-                height={700}
-                data={props.data}
-                margin={{
-                    top: 5,
-                    right: 30,
-                    left: 20,
-                    bottom: 5,
-                }}
-            >
-                <CartesianGrid strokeDasharray="3 3"/>
-                <XAxis dataKey={"time"}
-                       label={{value: "time", position: 'insideBottomRight', offset: -5}}
+            <Grid container direction="column"
+                  justify="space-around"
+                  alignItems="center">
+                <Grid item>
+                    <ScatterChart
+                        ref={ref}
+                        width={700}
+                        height={800}
+                        data={props.data}
+                        margin={{
+                            top: 5,
+                            right: 30,
+                            left: 20,
+                            bottom: 100,
+                        }}
+                    >
+                        <CartesianGrid strokeDasharray="3 3"/>
+                        <XAxis dataKey={"time"}
+                               label={{value: "time", position: 'insideBottomRight', offset: -20}}
 
-                />
-                <YAxis dataKey={props.yAxisLabel} label={{value: props.yAxisLabel, angle: -90, position: 'insideLeft'}}
-                       domain={[-0.5, 0.5]}/>
-                <Tooltip/>
-                <Legend/>
-                <Scatter
-                    type="monotone"
-                    dataKey={props.yAxisLabel}
-                    stroke="#8884d8"
-                    activeDot={{r: 8}}
-                />
-            </ScatterChart>
+                        />
+                        <YAxis dataKey={props.yAxisLabel}
+                               label={{value: props.yAxisLabel, angle: -90, position: 'insideLeft'}}
+                               domain={[props.yAxisStart, props.yAxisEnd]}/>
+                        <Tooltip/>
+                        <Legend/>
+                        <Scatter
+                            type="monotone"
+                            dataKey={props.yAxisLabel}
+                            stroke="#8884d8"
+                            activeDot={{r: 8}}
+                        />
+                    </ScatterChart>
+                </Grid>
+                <br/>
+                <Grid item>
+                    <Button variant="outlined" style={{color: "#2a3eb1"}} onClick={handleDownload}>
+                        Download Plot as PNG
+                    </Button>
+                </Grid>
+            </Grid>
         )
     }
 
