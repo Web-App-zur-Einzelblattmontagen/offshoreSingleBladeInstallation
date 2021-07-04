@@ -115,7 +115,6 @@ function Content(props) {
                 let number = data[i]
                 let float = parseFloat(number[yAxisLabel])
                 let helper = float - average
-                console.log(helper)
                 sum += helper * helper
             }
             sum = sum / (data.length)
