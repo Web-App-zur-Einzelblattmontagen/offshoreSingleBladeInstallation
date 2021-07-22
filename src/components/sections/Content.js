@@ -241,7 +241,7 @@ function Content(props) {
                     >
                         <Grid item>
                             <Typography align="center" variant="p" style={{color: "#2a3eb1"}}>
-                                <b>Avarege</b>
+                                <b>Average</b>
                             </Typography>
                             <br/>
                             {average}
