@@ -161,17 +161,6 @@ function Dashboard(props) {
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
-    useEffect(() => {
-        fetch("http://localhost:5000", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ id: "1234" }),
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data.name);
-            });
-    });
     return (
         <ThemeProvider theme={theme}>
             <div className={classes.root}>

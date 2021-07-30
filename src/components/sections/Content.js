@@ -86,7 +86,6 @@ function Content(props) {
 
     const handleData = (data) => {
         setData(data);
-        console.log(data);
     };
     const handleError = (e) => {
         console.log(e);
@@ -130,6 +129,17 @@ function Content(props) {
             console.log(error);
         }
     }, [average, variance, data, yAxisLabel]);
+    useEffect(() => {
+        fetch("http://localhost:5000", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+            });
+    }, [data]);
 
     return (
         <Grid

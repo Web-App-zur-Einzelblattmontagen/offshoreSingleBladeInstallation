@@ -8,13 +8,14 @@ app = Flask(__name__)
 def greeting():
     if request.method == 'OPTIONS': 
         return build_preflight_response()
-    elif request.method == 'POST': 
+    elif request.method == 'POST' and request.get_json() != {}: 
         req = request.get_json()
-        print(req["id"])
-        return build_actual_response(jsonify({ 'name': 'Zelgai' }))
+        #Machine Learning hier anstoßen
+        return build_actual_response(jsonify({ "response": req }))
     elif request.method == 'GET':
         return "GET"
-
+    else:
+        return build_preflight_response()
 
 def build_preflight_response():
     response = make_response()
