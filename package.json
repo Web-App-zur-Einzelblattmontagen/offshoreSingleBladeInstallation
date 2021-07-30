@@ -1,57 +1,58 @@
 {
-  "name": "cube-react",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@fontsource/roboto": "^4.4.5",
-    "@material-ui/core": "^4.11.3",
-    "@material-ui/icons": "^4.11.2",
-    "@material-ui/lab": "^4.0.0-alpha.57",
-    "@reduxjs/toolkit": "^1.5.1",
-    "@testing-library/jest-dom": "^5.11.6",
-    "@testing-library/react": "^11.2.2",
-    "@testing-library/user-event": "^12.5.0",
-    "@vtex/react-csv-parse": "^3.0.2",
-    "chart.js": "^3.4.0",
-    "classnames": "^2.2.6",
-    "file-saver": "^2.0.5",
-    "firebase": "^8.6.2",
-    "firebase-tools": "^9.12.0",
-    "lodash": "^4.17.15",
-    "node-sass": "^4.12.0",
-    "react": "^16.9.0",
-    "react-chartjs-2": "^3.0.3",
-    "react-dom": "^16.9.0",
-    "react-papaparse": "^3.16.1",
-    "react-redux": "^7.2.4",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "3.1.1",
-    "recharts": "^2.0.9",
-    "recharts-to-png": "^1.1.0",
-    "xlsx": "^0.17.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@testing-library/react": "^11.2.7"
-  }
+    "name": "cube-react",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@fontsource/roboto": "^4.4.5",
+        "@material-ui/core": "^4.11.3",
+        "@material-ui/icons": "^4.11.2",
+        "@material-ui/lab": "^4.0.0-alpha.57",
+        "@reduxjs/toolkit": "^1.5.1",
+        "@testing-library/jest-dom": "^5.11.6",
+        "@testing-library/react": "^11.2.2",
+        "@testing-library/user-event": "^12.5.0",
+        "@vtex/react-csv-parse": "^3.0.2",
+        "axios": "^0.21.1",
+        "chart.js": "^3.4.0",
+        "classnames": "^2.2.6",
+        "file-saver": "^2.0.5",
+        "firebase": "^8.6.2",
+        "firebase-tools": "^9.12.0",
+        "lodash": "^4.17.15",
+        "node-sass": "^4.12.0",
+        "react": "^16.9.0",
+        "react-chartjs-2": "^3.0.3",
+        "react-dom": "^16.9.0",
+        "react-papaparse": "^3.16.1",
+        "react-redux": "^7.2.4",
+        "react-router-dom": "^5.0.1",
+        "react-scripts": "3.1.1",
+        "recharts": "^2.0.9",
+        "recharts-to-png": "^1.1.0",
+        "xlsx": "^0.17.0"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@testing-library/react": "^11.2.7"
+    }
 }
