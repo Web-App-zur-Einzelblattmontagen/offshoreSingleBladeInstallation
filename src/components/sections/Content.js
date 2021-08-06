@@ -130,7 +130,7 @@ function Content(props) {
         }
     }, [average, variance, data, yAxisLabel]);
     useEffect(() => {
-        fetch("https://zelgai1234.pythonanywhere.com/", {
+        fetch("http://localhost:5000", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),

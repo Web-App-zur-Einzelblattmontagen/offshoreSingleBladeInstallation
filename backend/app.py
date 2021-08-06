@@ -11,6 +11,7 @@ def greeting():
     elif request.method == 'POST' and request.get_json() != {}: 
         req = request.get_json()
         #Machine Learning hier anstoßen
+        print(req)
         return build_actual_response(jsonify({ "response": req }))
     elif request.method == 'GET':
         return "GET"
