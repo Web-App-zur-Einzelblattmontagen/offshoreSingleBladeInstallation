@@ -19,10 +19,11 @@ def createReport(name="person",data= None):
     pdf.ln(h=8)
     pdf.set_font('Arial', '', 14)
     pdf.cell(w= 0, h=0, txt=name,border=0, ln=1, align="C")
-    pdf.line(10, 57, 200, 57)
-    #Hier den Inhalt der PDF weiter ausführen
+    pdf.ln(h=9)
+    pdf.image("./titel.jpg", w=190)
     pdf.ln(h=8)
-    pdf.cell(w= 0, h=0, txt="Test " + data[0]["epoch"],border=0, ln=1, align="C")
+    pdf.image("./titel3.png", 5, 200, WIDTH/2-23, h=85)
+    pdf.image("./titel2.png", WIDTH/2, 200, WIDTH/2-23, h=85)
     print(data)
     pdf.output(name + '.pdf', 'F')
 
