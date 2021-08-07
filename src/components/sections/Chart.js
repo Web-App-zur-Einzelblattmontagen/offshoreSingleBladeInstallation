@@ -38,7 +38,7 @@ function Chart(props) {
                     <LineChart
                         ref={ref}
                         width={700}
-                        height={700}
+                        height={600}
                         data={props.data}
                         margin={{
                             top: 5,

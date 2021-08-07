@@ -4,14 +4,14 @@ import datetime
 
 app = Flask(__name__)
 
-def createReport(name="person",data= None): 
+def createReport(name="person",data= None):
     #CONST VARIABLES
     WIDTH = 210
     HEIGHT = 297
     pdf = FPDF()
     pdf.add_page()
     pdf.set_font('Arial', '', 14)
-    pdf.image("./Logo_Partner_BIK_Bremen.png", 0, 5, w=70)
+    pdf.image("../Logo_Partner_BIK_Bremen.png", 0, 5, w=70)
     pdf.text(x = 150, y = 27, txt=datetime.datetime.now().strftime("%Y-%m-%d %H:%M"))
     pdf.ln(h=35)
     pdf.set_font('Arial', 'B', 16)
@@ -30,15 +30,15 @@ def createReport(name="person",data= None):
 
 @app.route('/', methods=['OPTIONS','POST', 'GET'])
 def greeting():
-    if request.method == 'OPTIONS': 
+    if request.method == 'OPTIONS':
         return build_preflight_response()
-    elif request.method == 'POST' and request.get_json() != {}: 
+    elif request.method == 'POST' and request.get_json() != {}:
         req = request.get_json()
         data = req['data']
         name = req['name']
 
         createReport(name, data)
-        return build_actual_response(send_file("./" + name + '.pdf'))
+        return build_actual_response(send_file('../' + name + '.pdf'))
     elif request.method == 'GET':
         return "GET"
     else:
