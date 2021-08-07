@@ -10,8 +10,6 @@ import Select from "@material-ui/core/Select";
 import Chart from "./Chart";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import TextField from "@material-ui/core/TextField";
-import download from 'downloadjs'
-import Button from "@material-ui/core/Button"
 
 const styles = (theme) => ({
     paper: {
@@ -81,15 +79,7 @@ function Content(props) {
     const chartTypeChange = (e) => {
         setChartType(e.target.value);
     };
-    const onDownload = (e) => {
-    e.preventDefault();
-    fetch("http://zelgai1234.pythonanywhere.com/", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({data: data, name: localStorage.getItem("userName")}),
-        })
-        .then(response => {
-            response.blob().then(blob => download(blob))})};
+ 
 
     const yAxisLabelChange = (e) => {
         setYAxisLabel(e.target.value);
@@ -140,43 +130,6 @@ function Content(props) {
             console.log(error);
         }
     }, [average, variance, data, yAxisLabel]);
-    // useEffect(() => {
-    //     fetch("http://localhost:5000", {
-    //         method: "POST",
-    //         headers: { "Content-Type": "application/json" },
-    //         body: JSON.stringify({data: data, name: localStorage.getItem("userName")}),
-    //     })
-    //     .then(response => {
-    //         //buffer to fill with all data from server
-    //         let pdfContentBuffer = new Int8Array();
-        
-    //         // response.body is a readableStream 
-    //         const reader = response.body.getReader();
-        
-    //         //function to retreive the next chunk from the stream
-    //         function handleChunk({ done, chunk })  {
-    //           if (done) {
-    //             //everything has been loaded, call `download()` to save gthe file as pdf and name it "my-file.pdf"
-    //             download(pdfContentBuffer, `my-file.pdf`, 'application/pdf')
-    //             return;
-    //           }
-        
-    //           // concat already loaded data with the loaded chunk
-    //           pdfContentBuffer = Int8Array.from([...pdfContentBuffer, ...chunk]);
-        
-    //           // retreive next chunk
-    //           reader.read().then(handleChunk);
-    //         }
-        
-    //         //retreive first chunk
-    //         reader.read().then(handleChunk)
-    //       })
-    //       .catch(err => console.error(err))
-    //           .then((res) => res.json())
-    //           .then((data) => {
-    //              console.log(data);
-    //           });
-    // }, [data]);
 
     return (
         <Grid
@@ -246,6 +199,7 @@ function Content(props) {
                         style={{ marginLeft: 10 }}
                     />
                 </Grid>
+
                 <Grid
                     item
                     lg={5}
@@ -434,11 +388,7 @@ function Content(props) {
                         </Grid>
                     </Grid>
                 </Grid>
-                
             </Grid>
-            <Button variant="outlined" style={{color: "#2a3eb1"}} onClick={onDownload}>
-                        Download Report as PDF
-                    </Button>
         </Grid>
     );
 }
