@@ -353,7 +353,7 @@ function Content(props) {
                                 <b>Average</b>
                             </Typography>
                             <br />
-                            {average}
+                            {average.toExponential(4)}
                         </Grid>
                         <Grid item>
                             <Typography
@@ -364,7 +364,7 @@ function Content(props) {
                                 <b>Variance</b>
                             </Typography>
                             <br />
-                            {variance}
+                            {variance.toExponential(4)}
                         </Grid>
                         <Grid item>
                             {" "}
@@ -376,7 +376,7 @@ function Content(props) {
                                 <b>Standard Deviation</b>
                             </Typography>
                             <br />
-                            {standardDeviation}
+                            {standardDeviation.toExponential(4)}
                         </Grid>
                     </Grid>
                 </Grid>
