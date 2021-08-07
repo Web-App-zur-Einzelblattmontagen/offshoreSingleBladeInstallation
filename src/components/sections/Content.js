@@ -170,16 +170,8 @@ function Content(props) {
                         download
                         style={{ textDecoration: "none" }}
                     >
-                        Small testfile
+                        Testfile
                     </a>{" "}
-                    &emsp;
-                    <a
-                        href="/testdatei_plots_lang.csv"
-                        download
-                        style={{ textDecoration: "none" }}
-                    >
-                        Large testfile
-                    </a>
                 </b>
             </Typography>
             <br />
