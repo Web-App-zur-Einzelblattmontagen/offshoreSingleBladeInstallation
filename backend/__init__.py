@@ -1,11 +1,16 @@
 from flask import Flask, render_template, request, jsonify, make_response, send_file
 from fpdf import FPDF
 import datetime
+import pandas as pd
+import seaborn as sn
+import matplotlib.pyplot as plt
 
 app = Flask(__name__)
 
+def generateCorrelationMatrix(data):
+    
+
 def createReport(name="person",data= None): 
-    #CONST VARIABLES
     WIDTH = 210
     HEIGHT = 297
     pdf = FPDF()
@@ -20,24 +25,25 @@ def createReport(name="person",data= None):
     pdf.set_font('Arial', '', 14)
     pdf.cell(w= 0, h=0, txt=name,border=0, ln=1, align="C")
     pdf.ln(h=9)
-    pdf.image("./titel.jpg", w=190)
+    pdf.image("./titel.png", w=190)
     pdf.ln(h=8)
     pdf.image("./titel3.png", 5, 200, WIDTH/2-23, h=85)
     pdf.image("./titel2.png", WIDTH/2, 200, WIDTH/2-23, h=85)
-    print(data)
+    pdf.add_page()
+    generateCorrelationMatrix(data)
     pdf.output(name + '.pdf', 'F')
 
 
 
 @app.route('/', methods=['OPTIONS','POST', 'GET'])
-def greeting():
+def handleRequest():
     if request.method == 'OPTIONS': 
         return build_preflight_response()
     elif request.method == 'POST' and request.get_json() != {}: 
         req = request.get_json()
         data = req['data']
         name = req['name']
-
+        print(data)
         createReport(name, data)
         return build_actual_response(send_file("./" + name + '.pdf'))
     elif request.method == 'GET':
