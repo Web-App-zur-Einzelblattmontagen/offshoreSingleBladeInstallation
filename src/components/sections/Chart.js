@@ -21,7 +21,7 @@ import download from "downloadjs";
 function Chart(props) {
     const onDownload = (e) => {
         e.preventDefault();
-        fetch("http://localhost:5000",{ //zelgai1234.pythonanywhere.com/", {
+        fetch("http://zelgai1234.pythonanywhere.com/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -103,7 +103,7 @@ function Chart(props) {
                     </Button>
                     <Button
                         variant="outlined"
-                        style={{ color: "#2a3eb1", margin: 15  }}
+                        style={{ color: "#2a3eb1", margin: 15 }}
                         onClick={onDownload}
                     >
                         Download Report as PDF
@@ -164,14 +164,14 @@ function Chart(props) {
                 <Grid item>
                     <Button
                         variant="outlined"
-                        style={{ color: "#2a3eb1" , margin: 15 }}
+                        style={{ color: "#2a3eb1", margin: 15 }}
                         onClick={handleDownload}
                     >
                         Download Plot as PNG
                     </Button>
                     <Button
                         variant="outlined"
-                        style={{ color: "#2a3eb1" , margin: 15 }}
+                        style={{ color: "#2a3eb1", margin: 15 }}
                         onClick={onDownload}
                     >
                         Download Report as PDF
@@ -232,14 +232,14 @@ function Chart(props) {
                 <Grid item>
                     <Button
                         variant="outlined"
-                        style={{ color: "#2a3eb1", margin: 15  }}
+                        style={{ color: "#2a3eb1", margin: 15 }}
                         onClick={handleDownload}
                     >
                         Download Plot as PNG
                     </Button>
                     <Button
                         variant="outlined"
-                        style={{ color: "#2a3eb1", margin: 15  }}
+                        style={{ color: "#2a3eb1", margin: 15 }}
                         onClick={onDownload}
                     >
                         Download Report as PDF

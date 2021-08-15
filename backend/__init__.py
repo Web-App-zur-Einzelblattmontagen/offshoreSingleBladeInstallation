@@ -7,8 +7,14 @@ import matplotlib.pyplot as plt
 
 app = Flask(__name__)
 
-def generateCorrelationMatrix(data):
-    
+def generateCorrelationMatrix(name="person", data= None):
+    data = pd.DataFrame.from_dict(data)
+    data = data.astype('float')
+    corrMatrix = data.corr(method = 'pearson')
+    plt.figure(figsize=(10, 10))  # hierkannst du die Plotgröße verändern
+    sn.heatmap(corrMatrix, annot=True)
+    plt.savefig(name + "_correlation_matrix.png")
+    #plt.show()
 
 def createReport(name="person",data= None): 
     WIDTH = 210
@@ -30,7 +36,8 @@ def createReport(name="person",data= None):
     pdf.image("./titel3.png", 5, 200, WIDTH/2-23, h=85)
     pdf.image("./titel2.png", WIDTH/2, 200, WIDTH/2-23, h=85)
     pdf.add_page()
-    generateCorrelationMatrix(data)
+    generateCorrelationMatrix(name, data)
+    pdf.image(name + "_correlation_matrix.png", w=190)
     pdf.output(name + '.pdf', 'F')
 
 
