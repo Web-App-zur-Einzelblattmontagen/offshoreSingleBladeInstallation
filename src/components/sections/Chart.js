@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, {useCallback} from "react";
 import {
     Area,
     AreaChart,
@@ -14,7 +14,7 @@ import {
 } from "recharts";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
-import { useCurrentPng } from "recharts-to-png";
+import {useCurrentPng} from "recharts-to-png";
 import FileSaver from "file-saver";
 import download from "downloadjs";
 
@@ -23,7 +23,7 @@ function Chart(props) {
         e.preventDefault();
         fetch("https://zelgai1234.pythonanywhere.com/", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
                 data: props.data,
                 name: localStorage.getItem("userName"),
@@ -32,7 +32,7 @@ function Chart(props) {
             response.blob().then((blob) => download(blob));
         });
     };
-    const [getPng, { ref, isLoading }] = useCurrentPng();
+    const [getPng, {ref, isLoading}] = useCurrentPng();
     const handleDownload = useCallback(async () => {
         const png = await getPng();
 
@@ -64,7 +64,7 @@ function Chart(props) {
                             bottom: 5,
                         }}
                     >
-                        <CartesianGrid strokeDasharray="3 3" />
+                        <CartesianGrid strokeDasharray="3 3"/>
                         <XAxis
                             dataKey={"time"}
                             label={{
@@ -82,31 +82,37 @@ function Chart(props) {
                             }}
                             domain={[props.yAxisStart, props.yAxisEnd]}
                         />
-                        <Tooltip />
-                        <Legend />
+                        <Tooltip/>
+                        <Legend/>
                         <Line
                             type="monotone"
                             dataKey={props.yAxisLabel}
                             stroke="#8884d8"
-                            activeDot={{ r: 8 }}
+                            activeDot={{r: 8}}
                         />
                     </LineChart>
                 </Grid>
-                <br />
+                <br/>
                 <Grid item>
                     <Button
                         variant="outlined"
-                        style={{ color: "#2a3eb1", margin: 15 }}
+                        style={{color: "#2a3eb1", margin: 15}}
                         onClick={handleDownload}
                     >
                         Download Plot as PNG
                     </Button>
                     <Button
                         variant="outlined"
-                        style={{ color: "#2a3eb1", margin: 15 }}
+                        style={{color: "#2a3eb1", margin: 15}}
                         onClick={onDownload}
                     >
-                        Download Report as PDF
+                        <div style={{display: "block"}}>
+                            Downlaod Report as PDF
+                            <br/>
+                            <p style={{fontSize: 12, margin: 0}}>
+                                (This can take a while)
+                            </p>
+                        </div>
                     </Button>
                 </Grid>
             </Grid>
@@ -132,7 +138,7 @@ function Chart(props) {
                             bottom: 5,
                         }}
                     >
-                        <CartesianGrid strokeDasharray="3 3" />
+                        <CartesianGrid strokeDasharray="3 3"/>
                         <XAxis
                             dataKey={"time"}
                             label={{
@@ -150,28 +156,28 @@ function Chart(props) {
                             }}
                             domain={[props.yAxisStart, props.yAxisEnd]}
                         />
-                        <Tooltip />
-                        <Legend />
+                        <Tooltip/>
+                        <Legend/>
                         <Area
                             type="monotone"
                             dataKey={props.yAxisLabel}
                             stroke="#8884d8"
-                            activeDot={{ r: 8 }}
+                            activeDot={{r: 8}}
                         />
                     </AreaChart>
                 </Grid>
-                <br />
+                <br/>
                 <Grid item>
                     <Button
                         variant="outlined"
-                        style={{ color: "#2a3eb1", margin: 15 }}
+                        style={{color: "#2a3eb1", margin: 15}}
                         onClick={handleDownload}
                     >
                         Download Plot as PNG
                     </Button>
                     <Button
                         variant="outlined"
-                        style={{ color: "#2a3eb1", margin: 15 }}
+                        style={{color: "#2a3eb1", margin: 15}}
                         onClick={onDownload}
                     >
                         Download Report as PDF
@@ -200,7 +206,7 @@ function Chart(props) {
                             bottom: 100,
                         }}
                     >
-                        <CartesianGrid strokeDasharray="3 3" />
+                        <CartesianGrid strokeDasharray="3 3"/>
                         <XAxis
                             dataKey={"time"}
                             label={{
@@ -218,28 +224,28 @@ function Chart(props) {
                             }}
                             domain={[props.yAxisStart, props.yAxisEnd]}
                         />
-                        <Tooltip />
-                        <Legend />
+                        <Tooltip/>
+                        <Legend/>
                         <Scatter
                             type="monotone"
                             dataKey={props.yAxisLabel}
                             stroke="#8884d8"
-                            activeDot={{ r: 8 }}
+                            activeDot={{r: 8}}
                         />
                     </ScatterChart>
                 </Grid>
-                <br />
+                <br/>
                 <Grid item>
                     <Button
                         variant="outlined"
-                        style={{ color: "#2a3eb1", margin: 15 }}
+                        style={{color: "#2a3eb1", margin: 15}}
                         onClick={handleDownload}
                     >
                         Download Plot as PNG
                     </Button>
                     <Button
                         variant="outlined"
-                        style={{ color: "#2a3eb1", margin: 15 }}
+                        style={{color: "#2a3eb1", margin: 15}}
                         onClick={onDownload}
                     >
                         Download Report as PDF

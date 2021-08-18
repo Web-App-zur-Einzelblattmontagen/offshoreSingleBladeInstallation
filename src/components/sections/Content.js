@@ -55,16 +55,17 @@ const styles = (theme) => ({
 
 const keys = [
     "epoch",
-    "acc_x",
-    "acc_y",
-    "acc_z",
-    "vel_x",
-    "vel_y",
-    "vel_z",
-    "pos_x",
-    "pos_y",
-    "pos_z",
-    "deflection",
+    "max_deflection",
+    "axis_ratio",
+    "p2p_azimuth_unwrapped",
+    "wind_speed_3",
+    "wind_dir_3_corr",
+    "Dirp",
+    "TSea",
+    "Hmax",
+    "Tmax",
+    "Hav",
+    "Tav",
 ];
 
 function Content(props) {
@@ -73,7 +74,7 @@ function Content(props) {
     const [standardDeviation, setStandardDeviation] = useState(0);
     const [variance, setVariance] = useState(0);
     const [chartType, setChartType] = useState("LineChart");
-    const [yAxisLabel, setYAxisLabel] = useState("deflection");
+    const [yAxisLabel, setYAxisLabel] = useState("max_deflection");
     const [yAxisStart, setYAxisStart] = useState(-0.5);
     const [yAxisEnd, setYAxisEnd] = useState(0.5);
     const chartTypeChange = (e) => {
@@ -166,7 +167,7 @@ function Content(props) {
                 <b>
                     If you have no data, you can easily download here: &emsp;
                     <a
-                        href="/testdatei_plots.csv"
+                        href="/testdatei.csv"
                         download
                         style={{ textDecoration: "none" }}
                     >
@@ -256,35 +257,38 @@ function Content(props) {
                                     value={yAxisLabel}
                                     onChange={yAxisLabelChange}
                                 >
-                                    <MenuItem value={"deflection"}>
-                                        Deflection
+                                    <MenuItem value={"max_deflection"}>
+                                        Maximal Deflection
                                     </MenuItem>
-                                    <MenuItem value={"acc_x"}>
-                                        Acceleration X
+                                    <MenuItem value={"axis_ratio"}>
+                                        Axial ratio
                                     </MenuItem>
-                                    <MenuItem value={"acc_y"}>
-                                        Acceleration Y
+                                    <MenuItem value={"p2p_azimuth_unwrapped"}>
+                                        P2P Azimuth (unwrapped)
                                     </MenuItem>
-                                    <MenuItem value={"acc_z"}>
-                                        Acceleration Z
+                                    <MenuItem value={"wind_speed_3"}>
+                                        Windspeed [m/s]
                                     </MenuItem>
-                                    <MenuItem value={"vel_x"}>
-                                        Velocity X
+                                    <MenuItem value={"wind_dir_3_corr"}>
+                                        Winddirection [degree due North]
                                     </MenuItem>
-                                    <MenuItem value={"vel_y"}>
-                                        Velocity Y
+                                    <MenuItem value={"Dirp"}>
+                                    Dirp  peak direction [deg due North]
                                     </MenuItem>
-                                    <MenuItem value={"vel_z"}>
-                                        Velocity Z
+                                    <MenuItem value={"TSea"}>
+                                        TSea, sea surface temperature [C]
                                     </MenuItem>
-                                    <MenuItem value={"pos_x"}>
-                                        Position X
+                                    <MenuItem value={"Hmax"}>
+                                        Height of the highest wave [cm] 
                                     </MenuItem>
-                                    <MenuItem value={"pos_y"}>
-                                        Position Y
+                                    <MenuItem value={"Tmax"}>
+                                        Period of the highest wave [s] 
                                     </MenuItem>
-                                    <MenuItem value={"pos_z"}>
-                                        Position Z
+                                    <MenuItem value={"Hav"}>
+                                        Average height of all waves [cm] 
+                                    </MenuItem>
+                                    <MenuItem value={"Tav"}>
+                                        Average period of all waves [s] 
                                     </MenuItem>
                                 </Select>
                                 <FormHelperText>
