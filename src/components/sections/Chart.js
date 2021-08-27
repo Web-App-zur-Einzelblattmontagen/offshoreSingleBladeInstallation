@@ -107,7 +107,7 @@ function Chart(props) {
                         onClick={onDownload}
                     >
                         <div style={{display: "block"}}>
-                            Downlaod Report as PDF
+                            Download Report as PDF
                             <br/>
                             <p style={{fontSize: 12, margin: 0}}>
                                 (This can take a while)
