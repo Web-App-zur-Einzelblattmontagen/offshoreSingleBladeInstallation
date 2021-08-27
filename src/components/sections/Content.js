@@ -273,7 +273,7 @@ function Content(props) {
                                         Winddirection [degree due North]
                                     </MenuItem>
                                     <MenuItem value={"Dirp"}>
-                                    Dirp  peak direction [deg due North]
+                                    Dirp  peak direction [degree due North]
                                     </MenuItem>
                                     <MenuItem value={"TSea"}>
                                         TSea, sea surface temperature [C]
