@@ -21,7 +21,7 @@ import download from "downloadjs";
 function Chart(props) {
     const onDownload = (e) => {
         e.preventDefault();
-        fetch("https://zelgai1234.pythonanywhere.com/", {
+        fetch("http://zelgai1234.pythonanywhere.com/", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
