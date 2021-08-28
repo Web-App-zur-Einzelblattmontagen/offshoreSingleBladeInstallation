@@ -82,7 +82,7 @@ $ cd offshoreSingleBladeInstallation/backend
 $ python __init__.py
 ```
 
- Open the file offshoreSingleBladeInstallation/src/components/sections/Charts.js and change the link in line 24 to "http://localhost:5000"
+Open the file offshoreSingleBladeInstallation/src/components/sections/Charts.js and change the link in line 24 to "http://localhost:5000"
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
