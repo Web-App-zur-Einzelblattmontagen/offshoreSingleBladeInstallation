@@ -63,7 +63,7 @@ For more scientific information click <a href="https://github.com/Web-App-zur-Ei
 
 
 ## Installation
-Please execute the following commands in a bash to start the web app in your local development environment.
+Execute the following commands in a shell to start the web app frontend on your local development environment.
 
 ```
 $ git clone https://github.com/Web-App-zur-Einzelblattmontagen/offshoreSingleBladeInstallation.git
@@ -74,6 +74,15 @@ $ npm run start
 
 open http://localhost:3000/ 
 ```
+
+Execute the following commands in a second shell to start the web app backend on your local development environment.
+ 
+```
+$ cd offshoreSingleBladeInstallation/backend
+$ python __init__.py
+```
+
+ Open the file offshoreSingleBladeInstallation/src/components/sections/Charts.js and change the link in line 24 to "http://localhost:5000"
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
