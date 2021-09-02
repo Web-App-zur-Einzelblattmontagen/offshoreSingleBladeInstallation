@@ -139,9 +139,10 @@ def createReport(name="person",data= None):
     pdf.set_font('Arial', 'B', 16)
     pdf.cell(w= 0, h=0, txt='Machine Learning',border=0, ln=1, align="C")
     pdf.set_font('Arial', '', 14)
-    pdf.text(txt="This plot shows the different wave heights in the specific direction, of the data ", x=10, y=25)
-    pdf.text(txt="you have entered.", x=10, y= 35)
-    pdf.text(txt="More information: https://windrose.readthedocs.io/en/latest/usage.html", x=10, y=45)
+    pdf.text(txt="The shown histogram represents the allocation of your intput data in 29 different cluster ", x=10, y=25)
+    pdf.text(txt="categories. These categories are calculated by the ROLF-Clustering algorithm. Your data ", x=10, y= 35)
+    pdf.text(txt="has been sorted by comparing its values with thresholds of the clustering algorithm to ", x=10, y=45)
+    pdf.text(txt="visualize the proportion of existing clusters in your data. ", x=10, y=55)
     predict(name, data)
     pdf.image('./generated/' + name + "_prediction.png", w=190, x=10, y=50)
     #third page
